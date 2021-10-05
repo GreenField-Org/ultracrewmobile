@@ -15,7 +15,7 @@ export default function App() {
     style={styles.TextInput}
     placeholder="email"
     placeholderTextColor="#003f5c"
-    onChangeText={(email) => setEmail(email)}
+    onChangeText={(email) => setUsername(username)}
     
   />
 </View>
