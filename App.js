@@ -8,7 +8,8 @@ export default function App() {
   const [password, setPassword] = useState('')
   return (
     <View style={styles.container}>
-      <Image source = {require("./assets/shoes.jpg")}/>
+    <Text style={styles.titleText}> Ultra Crew App</Text>
+      <Image source ={require("./assets/shoes.jpg")} style={styles.image}/>
       <View style={styles.inputView}>
   
   <TextInput
@@ -53,14 +54,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
+  titleText: {
+    fontSize: 40
+  },
+
   image :{
     marginBottom: 40,
-    width: 100
+    height: 100, 
+    width: 200,
+    borderRadius: 10
   },
 
   inputView: {
     backgroundColor: "lightgray",
-    borderRadius: 10,
+    borderRadius: 5,
     width: "80%",
     height: 45,
     marginBottom: 20,
