@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 
-export default function App() {
+export default function LoginScreen() {
   //it's binnnaa while since I've used state. But I think this is right
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
