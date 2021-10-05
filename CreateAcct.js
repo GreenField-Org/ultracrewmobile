@@ -39,10 +39,33 @@ export default function CreateAcct() {
         />
         <TextInput
         style={styles.TextInput}
-        placeholder="Weight"
+        placeholder="Country"
+        placeholderTextColor="#003f5c"      
+        />
+        <TextInput
+        style={styles.TextInput}
+        placeholder="Street Address"
+        placeholderTextColor="#003f5c"      
+        />
+        <TextInput
+        style={styles.TextInput}
+        placeholder="Email"
+        placeholderTextColor="#003f5c"      
+        />
+        <TextInput
+        style={styles.TextInput}
+        placeholder="Telephone Number"
+        placeholderTextColor="#003f5c"      
+        />
+        <TextInput
+        style={styles.TextInput}
+        placeholder="User Tier"
         placeholderTextColor="#003f5c"      
         />
 
+        <TouchableOpacity style={styles.submitButton}>
+            <Text stye={styles.btnText}>Create Account</Text>
+        </TouchableOpacity>
       </View>
       
 
@@ -74,11 +97,11 @@ export default function CreateAcct() {
           marginLeft: 20,
         },
       
-        createAcct: {
+        btnText: {
       
         },
       
-        loginButton:
+        submitButton:
        {
          width:"80%",
          borderRadius:10,
