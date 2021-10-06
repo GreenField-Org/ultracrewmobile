@@ -8,7 +8,6 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
     <Text style={styles.titleText}> Ultra Crew App</Text>
-      <Image source ={require("./assets/shoes.jpg")} style={styles.image}/>
       <View style={styles.inputView}>
   
   <TextInput
