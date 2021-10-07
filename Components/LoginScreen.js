@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
   },
 
   titleText: {
-    fontSize: 40
+    fontSize: 40,
+    fontFamily: 'Lobster-Regular'
   },
 
   image :{
