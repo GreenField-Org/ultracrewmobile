@@ -3,11 +3,11 @@ import { View, StyleSheet } from "react-native";
 import {Picker} from '@react-native-picker/picker';
 
 export default function PickerComponent(){
-  const [selectedValue, setSelectedValue] = useState("java");
+  const [selectedTier, setSelectedValue] = useState("");
   return (
     <View style={styles.container}>
     <Picker
-        //selectedValue={selectedLanguage}
+        //selectedValue={selectedTier}
         //onValueChange={(itemValue, itemIndex) =>
         //setSelectedLanguage(itemValue)
         >
