@@ -1132,6 +1132,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@expo-google-fonts/lobster@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/lobster/-/lobster-0.2.0.tgz#4b010901e51ce5228d2b0533b57a7843451df284"
+  integrity sha512-WAbvBMdirEfvNgSbSb9ANkwpm27mvPfYpdB/rW/0sjC2RvXqnO0fH9pB/FivwpvmtNimfNIOWy8qQPfZBE9MHw==
+
 "@expo/config-plugins@2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-2.0.4.tgz#955fd70a2aeefbe99ec71cecb1d7ea7b626dc79e"

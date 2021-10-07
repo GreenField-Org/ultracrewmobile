@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
+import { useFonts } from 'expo-font';
 
 export default function LoginScreen() {
   //it's binnnaa while since I've used state. But I think this is right
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  let [fontsLoaded] = useFonts({
+    'Lobster-Regular': require('../assets/fonts/Lobster-Regular.ttf')
+  })
+  
   return (
     <View style={styles.container}>
     <Text style={styles.titleText}> Ultra Crew App</Text>
@@ -53,7 +58,8 @@ const styles = StyleSheet.create({
 
   titleText: {
     fontSize: 40,
-    marginBottom: 40
+    marginBottom: 40,
+    fontFamily: 'Lobster-Regular'
   },
 
   image :{
