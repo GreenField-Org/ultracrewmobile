@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
 
   titleText: {
     fontSize: 40,
-    fontFamily: 'Lobster-Regular'
+    marginBottom: 40
   },
 
   image :{
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   },
 
   createAcct: {
-
+    marginTop: 40
   },
 
   loginButton:
