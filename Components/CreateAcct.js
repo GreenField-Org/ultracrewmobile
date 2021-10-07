@@ -4,7 +4,7 @@ import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'rea
 export default function CreateAcct() {
     return (
         <View style={styles.form}>
-            <Text>Create an Account</Text>
+            <Text style={styles.titleText}>Create an Account</Text>
 
             <TextInput
                 style={styles.TextInput}
@@ -79,6 +79,13 @@ export default function CreateAcct() {
           justifyContent: 'center',
         },
       
+        titleText:{
+          fontSize: 30,
+          backgroundColor: 'orange',
+          paddingLeft: 58,
+          paddingRight: 58
+
+        },
       
         inputView: {
           backgroundColor: "lightgray",
@@ -93,10 +100,22 @@ export default function CreateAcct() {
           height: 50,
           flex: 1,
           fontSize: 20,
+          marginTop: 5,
           padding: 5,
           marginLeft: 20,
+          backgroundColor: 'lightgray',
+          borderRadius: 10
         },
-      
+
+        inputView: {
+          backgroundColor: "lightgray",
+          borderRadius: 5,
+          width: "80%",
+          height: 45,
+          marginBottom: 20,
+          alignItems: "center",
+        },
+
         btnText: {
       
         },
@@ -107,6 +126,7 @@ export default function CreateAcct() {
          borderRadius:10,
          height:50,
          fontSize: 20,
+         marginTop: 10,
          alignItems:"center",
          justifyContent:"center",
          backgroundColor:"orange",
