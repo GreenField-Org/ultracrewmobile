@@ -6,6 +6,6 @@ import PickerComponent from './Components/FormComponents/Picker';
 export default function App() {
   return(
     <View>
-      <LoginScreen/>
+      <PickerComponent/>
     </View>
   )};
