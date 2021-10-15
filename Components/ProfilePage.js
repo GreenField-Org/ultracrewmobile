@@ -3,6 +3,8 @@ import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'rea
 
 export default function ProfilePage() {
     return (
-<Text>Profile page will go here.</Text>
+        <View>
+            <Text>Profile page will go here.</Text>
+        </View>
     )
 }
