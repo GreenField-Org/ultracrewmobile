@@ -2,19 +2,14 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import {Picker} from '@react-native-picker/picker';
 
-export default function PickerComponent(){
+export default function PickerComponent({defaultVal}){
   const [selectedTier, setSelectedValue] = useState("");
+  const labelList = []
+  /*will need to add map in order to create new drop down for each val*/
   return (
     <View style={styles.container}>
-    <Picker
-        //selectedValue={selectedTier}
-        //onValueChange={(itemValue, itemIndex) =>
-        //setSelectedLanguage(itemValue)
-        >
-        <Picker.Item label="Tier One" value="Tier One" />
-        <Picker.Item label="Tier Two" value="Tier Two" />
-        <Picker.Item label="Tier Three" value="Tier Three" />
-        <Picker.Item label="Tier Four" value="Tier Four" />
+    <Picker>
+        <Picker.Item label={defaultVal} value={defaultVal} />
     </Picker>
     </View>
   );
