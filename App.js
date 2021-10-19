@@ -1,11 +1,17 @@
 import React from 'react';
-import { View } from 'react-native'
-import PhoneNumber from './Components/FormComponents/PhoneNumber';
-import LoginScreen from './Components/LoginScreen';
+import { View, StyleSheet } from 'react-native'
+import LoginScreen from './Views/LoginScreen';
+
 
 export default function App() {
   return(
-    <View>
+    <View style={styles.container}>
       <LoginScreen/>
     </View>
   )};
+
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: '#F8CD82'
+    }
+    })
