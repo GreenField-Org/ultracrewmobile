@@ -6,10 +6,12 @@ export default function PickerComponent({defaultVal}){
   const [selectedTier, setSelectedValue] = useState("");
   const labelList = []
   /*will need to add map in order to create new drop down for each val*/
+  const createLabels = labelList.map((label) => 
+    <Picker.Item>{label}</Picker.Item>)
   return (
     <View style={styles.container}>
     <Picker>
-        <Picker.Item label={defaultVal} value={defaultVal} />
+      <Picker.Item label={defaultVal} value={defaultVal} />
     </Picker>
     </View>
   );
