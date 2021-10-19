@@ -80,7 +80,7 @@ export default function CreateAcct() {
         },
       
         titleText:{
-          fontSize: 30,
+          fontSize: 25,
           backgroundColor: 'orange',
           paddingLeft: 58,
           paddingRight: 58
