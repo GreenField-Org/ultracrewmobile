@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import Input
- from './FormComponents/Input';
+import Input from './FormComponents/Input';
+import PhoneNumber from './FormComponents/PhoneNumber';
+
 export default function CreateAcct() {
     return (
         <View style={styles.form}>
@@ -39,6 +40,7 @@ export default function CreateAcct() {
             <Input 
                 placeholder='User Tier'
             />
+
         <TouchableOpacity style={styles.submitButton}>
             <Text stye={styles.btnText}>Create Account</Text>
         </TouchableOpacity>
@@ -56,7 +58,7 @@ export default function CreateAcct() {
         },
       
         titleText:{
-          fontSize: 30,
+          fontSize: 25,
           backgroundColor: 'orange',
           paddingLeft: 58,
           paddingRight: 58
