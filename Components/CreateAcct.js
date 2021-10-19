@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import PhoneNumber from './FormComponents/PhoneNumber';
 
 export default function CreateAcct() {
     return (
@@ -52,11 +53,9 @@ export default function CreateAcct() {
         placeholder="Email"
         placeholderTextColor="#003f5c"      
         />
-        <TextInput
-        style={styles.TextInput}
-        placeholder="Telephone Number"
-        placeholderTextColor="#003f5c"      
-        />
+
+        <PhoneNumber/>
+
         <TextInput
         style={styles.TextInput}
         placeholder="User Tier"
