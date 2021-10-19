@@ -1,67 +1,46 @@
 import React from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
+import Input from './FormComponents/Input';
+import PhoneNumber from './FormComponents/PhoneNumber';
+
 export default function CreateAcct() {
     return (
         <View style={styles.form}>
             <Text style={styles.titleText}>Create an Account</Text>
-
-            <TextInput
-                style={styles.TextInput}
-                placeholder="Username"
-                placeholderTextColor="#003f5c"      
+            <Input 
+                placeholder='Username'
             />
-            <TextInput
-                style={styles.TextInput}
-                placeholder="First Name"
-                placeholderTextColor="#003f5c"      
+            <Input 
+                placeholder='First Name'
             />
-            <TextInput
-                style={styles.TextInput}
-                placeholder="Middle Initial"
-                placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-            style={styles.TextInput}
-            placeholder="Last Name"
-            placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-            style={styles.TextInput}
-            //what way do we want to do DOB?
-            placeholder="Date of Birth"
-            placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-        style={styles.TextInput}
-        placeholder="Weight"
-        placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-        style={styles.TextInput}
-        placeholder="Country"
-        placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-        style={styles.TextInput}
-        placeholder="Street Address"
-        placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-        style={styles.TextInput}
-        placeholder="Email"
-        placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-        style={styles.TextInput}
-        placeholder="Telephone Number"
-        placeholderTextColor="#003f5c"      
-        />
-        <TextInput
-        style={styles.TextInput}
-        placeholder="User Tier"
-        placeholderTextColor="#003f5c"      
-        />
+            <Input 
+                placeholder='Middle initial'
+            />
+            <Input 
+                placeholder='Last Name'
+            />
+            <Input 
+                placeholder='Date of birth'
+            />
+            <Input 
+                placeholder='Weight'
+            />
+            <Input 
+                placeholder='Country'
+            />
+            <Input 
+                placeholder='Street address'
+            />
+            <Input 
+                placeholder='Email'
+            />
+            <Input 
+                placeholder='Telephone number'
+            />
+            <Input 
+                placeholder='User Tier'
+            />
 
       <DefaultButton buttonText='Create Account'/>
       </View>
@@ -78,7 +57,7 @@ export default function CreateAcct() {
         },
       
         titleText:{
-          fontSize: 30,
+          fontSize: 25,
           backgroundColor: 'orange',
           paddingLeft: 58,
           paddingRight: 58
