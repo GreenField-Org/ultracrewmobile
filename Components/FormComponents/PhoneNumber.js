@@ -33,5 +33,7 @@ export default function PhoneNumber(){
 const styles = StyleSheet.create({
     phone: {
         width: 300,
+        height: 100,
+        justifyContent: 'center',
     }
 })
