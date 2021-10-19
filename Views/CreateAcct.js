@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import DefaultButton from '../Components/DefaultButton';
 import Input from './FormComponents/Input';
 import PhoneNumber from './FormComponents/PhoneNumber';
 
@@ -41,9 +42,7 @@ export default function CreateAcct() {
                 placeholder='User Tier'
             />
 
-        <TouchableOpacity style={styles.submitButton}>
-            <Text stye={styles.btnText}>Create Account</Text>
-        </TouchableOpacity>
+      <DefaultButton buttonText='Create Account'/>
       </View>
       
 
