@@ -19,7 +19,7 @@ export default function PhoneNumber(){
             //ref={phoneInput}
             style={styles.phone}
             defaultValue={value}
-            defaultCode="IN"
+            defaultCode="US"
             onChangeFormattedText={(text) => {
               setValue(text);
             }}

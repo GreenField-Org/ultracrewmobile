@@ -7,6 +7,6 @@ import LoginScreen from './Components/LoginScreen';
 export default function App() {
   return(
     <View>
-      <CreateAcct/>
+      <LoginScreen/>
     </View>
   )};
