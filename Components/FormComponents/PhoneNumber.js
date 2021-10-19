@@ -16,8 +16,22 @@ export default function PhoneNumber(){
   //const phoneInput = useRef<PhoneInput>(null);
   return (
         <PhoneInput
-            //ref={phoneInput}
-            style={styles.phone}
+            containerStyle={{
+              backgroundColor: 'lightgray',
+              width: "80%",
+              shadowOffset: 10,
+              borderRadius: 10
+            }}
+            textInputStyle={{
+              backgroundColor: 'lightgray',
+              width: '80%',
+              fontSize: 20,
+            }}
+            inputStyle={{
+              backgroundColor: 'lightgray',
+              width: "80%",
+              borderRadius: 10
+            }}
             defaultValue={value}
             defaultCode="IN"
             onChangeFormattedText={(text) => {
