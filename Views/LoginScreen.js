@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
+import DefaultButton from './DefaultButton';
 
 export default function LoginScreen() {
   //it's binnnaa while since I've used state. But I think this is right
@@ -35,9 +36,7 @@ export default function LoginScreen() {
   />
 </View>
 
-<TouchableOpacity style={styles.loginButton}>
-  <Text style={styles.loginText}>Login</Text>
-</TouchableOpacity>
+<DefaultButton buttonText='Login'/>
 
 <TouchableOpacity>
   <Text style={styles.createAcct}
@@ -51,9 +50,10 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F8CD82',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 150
   },
 
   titleText: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
    fontSize: 20,
    alignItems:"center",
    justifyContent:"center",
-   backgroundColor:"orange",
+   backgroundColor:"#0DF7DB",
  }
 
 });
