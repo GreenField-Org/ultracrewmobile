@@ -1,16 +1,21 @@
 import React from 'react';
 import { View } from 'react-native'
-import PhoneNumber from './Components/FormComponents/PhoneNumber';
 import LoginScreen from './Components/LoginScreen';
+import MyRaces from './MyRaces'
 import { NavigationContainer } from '@react-navigation/native';
-import CreateAcct from './Components/CreateAcct';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { ScreenStack } from 'react-native-screens';
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return(
     <View>
     <NavigationContainer>
-    <CreateAcct/>
-      <LoginScreen/>
-      <PhoneNumber/>
+    <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login'}} />
+        <Stack.Screen name="MyRaces" component={MyRaces} options={{ title: 'My Races'}} />
+      </Stack.Navigator>
     </NavigationContainer>
     </View>
   )};
