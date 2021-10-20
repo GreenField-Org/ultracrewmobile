@@ -22,6 +22,11 @@ export default function PhoneNumber(){
               shadowOffset: 10,
               borderRadius: 10
             }}
+            css-view-1dbjc4 = {{
+              paddingBottom: 19,
+              paddingTop: 40,
+              backgroundColor: 'blue'
+          }}
             textInputStyle={{
               backgroundColor: 'lightgray',
               width: '80%',
