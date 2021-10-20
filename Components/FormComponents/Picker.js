@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import {Picker} from '@react-native-picker/picker';
 
-export default PickerComponent = () => {
-  const [selectedValue, setSelectedValue] = useState("java");
+export default function PickerComponent({itemList}){
+  const [selectedValue, setSelectedValue] = useState("");
+  // pass in itemList prop as an array in order to create item dropdown
   return (
     <View style={styles.container}>
-    <Picker
-        selectedValue={selectedLanguage}
-        onValueChange={(itemValue, itemIndex) =>
-        setSelectedLanguage(itemValue)
-        }>
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-  </Picker>
+    <Picker>
+      {labelList.map(label => <Picker.Item label={label} value={label} />)}
+    </Picker>
     </View>
   );
 }
@@ -23,5 +19,5 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 40,
     alignItems: "center"
-  }
+  },
 });
