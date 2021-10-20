@@ -1,8 +1,7 @@
 import React from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
-import Input from './FormComponents/Input';
-import PhoneNumber from './FormComponents/PhoneNumber';
+import Input from '../Components/FormComponents/Input';
 
 export default function CreateAcct() {
     return (
@@ -11,7 +10,7 @@ export default function CreateAcct() {
             <Input 
                 placeholder='Username'
             />
-            <Input 
+            <Input
                 placeholder='First Name'
             />
             <Input 
@@ -25,6 +24,7 @@ export default function CreateAcct() {
             />
             <Input 
                 placeholder='Weight'
+                type = 'numeric'
             />
             <Input 
                 placeholder='Country'
@@ -36,7 +36,7 @@ export default function CreateAcct() {
                 placeholder='Email'
             />
             <Input 
-                placeholder='Telephone number'
+                placeholder='Telephone Number'
             />
             <Input 
                 placeholder='User Tier'
