@@ -10,7 +10,7 @@ export default function CreateAcct() {
             <Input 
                 placeholder='Username'
             />
-            <Input 
+            <Input
                 placeholder='First Name'
             />
             <Input 
@@ -24,7 +24,7 @@ export default function CreateAcct() {
             />
             <Input 
                 placeholder='Weight'
-                keyboardType = 'number-pad'
+                type = 'numeric'
             />
             <Input 
                 placeholder='Country'
@@ -40,7 +40,6 @@ export default function CreateAcct() {
             />
             <Input 
                 placeholder='User Tier'
-                keyboardType = 'number-pad'
             />
 
       <DefaultButton buttonText='Create Account'/>
