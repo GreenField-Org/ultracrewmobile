@@ -1,69 +1,75 @@
-import React, {useState, useRef} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  StatusBar,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
-import PhoneInput from 'react-native-phone-number-input';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-export default function PhoneNumberInput (){
-  const [value, setValue] = useState('');
-  const [countryCode, setCountryCode] = useState('');
-  const [formattedValue, setFormattedValue] = useState('');
-  const [valid, setValid] = useState(false);
-  const [disabled, setDisabled] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
-  const phoneInput = useRef<PhoneInput>(null);
-  return (
+import PhoneInput from "react-native-phone-input";
+
+export default function PhoneNumber(){
+  const [selectedCountry, setSelectedCountry] = useState("");
+
+  /*updateInfo() {
+    this.setState({
+      valid: this.phone.isValidNumber(),
+      type: this.phone.getNumberType(),
+      value: this.phone.getValue()
+    });
+  }
+
+  renderInfo() {
+    if (this.state.value) {
+      return (
+        <View style={styles.info}>
+          <Text>
+            Is Valid:{" "}
+            <Text style={{ fontWeight: "bold" }}>
+              {this.state.valid.toString()}
+            </Text>
+          </Text>
+          <Text>
+            Type: <Text style={{ fontWeight: "bold" }}>{this.state.type}</Text>
+          </Text>
+          <Text>
+            Value:{" "}
+            <Text style={{ fontWeight: "bold" }}>{this.state.value}</Text>
+          </Text>
+        </View>
+      );
+    }
+  }
+*/
+    return (
       <View style={styles.container}>
-      <StatusBar barStyle="dark-content" />
-      </View>
-  );
-};
+        <PhoneInput
+          ref={ref => {
+            this.phone = ref;
+          }}
+        />
 
-const styles = StyleSheet.create({
+        <TouchableOpacity onPress={this.updateInfo} style={styles.button}>
+          <Text>Get Info</Text>
+        </TouchableOpacity>
+
+        {this.renderInfo()}
+      </View>
+    );
+  }
+
+
+let styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.lighter,
+    alignItems: "center",
+    padding: 20,
+    paddingTop: 60
   },
-  wrapper: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  info: {
+    // width: 200,
+    borderRadius: 5,
+    backgroundColor: "#f0f0f0",
+    padding: 10,
+    marginTop: 20
   },
   button: {
     marginTop: 20,
-    height: 50,
-    width: 300,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#7CDB8A',
-    shadowColor: 'rgba(0,0,0,0.4)',
-    shadowOffset: {
-      width: 1,
-      height: 5,
-    },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
-    elevation: 10,
-  },
-  buttonText:{
-    color: 'white',
-    fontSize: 14,
-  },
-  redColor: {
-    backgroundColor: '#F57777'
-  },
-  message: {
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 20,
-    marginBottom: 20,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-  },
+    padding: 10
+  }
 });
