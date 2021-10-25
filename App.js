@@ -9,6 +9,7 @@ import Home from './Home';
 import CreateAcct from './Components/CreateAcct';
 import Race from './Race';
 import ProfilePage from './Components/ProfilePage';
+import AidStation from './Views/Aid-Station';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,13 +24,11 @@ export default function App({navigation}) {
         <Stack.Screen name="CreateAcct" component={CreateAcct} options={{ title: 'Create Account'}} />
         <Stack.Screen name="Race" component={Race} options={{ title: 'Race'}} />
         <Stack.Screen name="ProfilePage" component={ProfilePage} options={{ title: 'My Profile'}} />
+        <Stack.Screen name="AidStation" component={AidStation} options={{ title: 'Aid Station'}} />
+
       </Stack.Navigator>
     </NavigationContainer>
-    
-    <Button
-    title="Login!"
-    onPress={() => navigation.navigate('Login')}
-  />
+
 
     </View>
   )};
