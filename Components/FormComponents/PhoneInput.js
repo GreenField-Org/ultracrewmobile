@@ -38,17 +38,7 @@ export default function PhoneNumber(){
 */
     return (
       <View style={styles.container}>
-        <PhoneInput
-          ref={ref => {
-            this.phone = ref;
-          }}
-        />
-
-        <TouchableOpacity onPress={this.updateInfo} style={styles.button}>
-          <Text>Get Info</Text>
-        </TouchableOpacity>
-
-        {this.renderInfo()}
+        <PhoneInput/>
       </View>
     );
   }
