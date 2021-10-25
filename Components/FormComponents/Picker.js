@@ -4,11 +4,11 @@ import {Picker} from '@react-native-picker/picker';
 
 export default function PickerComponent({itemList}){
   const [selectedValue, setSelectedValue] = useState("");
-  // pass in itemList prop as an array in order to create item dropdown
+  // pass in itemList prop as a string separated by commas in order to create item dropdown
   return (
     <View style={styles.container}>
     <Picker>
-      {itemList.map(label => <Picker.Item label={label} value={label} />)}
+      {itemList.split(',').map(label => <Picker.Item label={label} value={label} />)}
     </Picker>
     </View>
   );
