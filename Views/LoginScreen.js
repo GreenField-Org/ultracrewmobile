@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
+import DefaultButton from '../Components/DefaultButton';
 
 const customFont = {
   'Lobster-Regular': require('../assets/fonts/Lobster-Regular.ttf')
@@ -37,9 +38,7 @@ export default function LoginScreen() {
           />
         </View>
 
-        <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginText}>Login</Text>
-        </TouchableOpacity>
+        <DefaultButton buttonText='Login'/>
 
         <TouchableOpacity>
           <Text style={styles.createAcct}
@@ -57,8 +56,9 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#F8CD82',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   titleText: {
     fontSize: 40,
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
    fontSize: 20,
    alignItems:"center",
    justifyContent:"center",
-   backgroundColor:"orange",
+   backgroundColor:"#0DF7DB",
  }
 
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native'
-import LoginScreen from './Components/LoginScreen';
+import LoginScreen from './Views/LoginScreen';
 
 export default function App() {
   return(
@@ -8,3 +8,4 @@ export default function App() {
       <LoginScreen/>
     </View>
   )};
+
