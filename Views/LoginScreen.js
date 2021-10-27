@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
-import DefaultButton from './DefaultButton';
+import DefaultButton from '../Components/DefaultButton';
 
 export default function LoginScreen() {
   //it's binnnaa while since I've used state. But I think this is right
