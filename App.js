@@ -6,7 +6,7 @@ import PickerComponent from './Components/FormComponents/Picker';
 export default function App() {
   return(
     <View>
-      <PickerComponent/>
+      <PickerComponent itemList= '[mazzy, lilka, toska]'/>
     </View>
   )};
 
