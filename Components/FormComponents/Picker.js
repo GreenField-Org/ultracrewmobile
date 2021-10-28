@@ -8,7 +8,7 @@ export default function PickerComponent({itemList = []}){
   return (
     <View style={styles.container}>
     <Picker>
-      {itemList.split(',').map(label => <Picker.Item label={label} value={label} />)}
+      {itemList.map(label => <Picker.Item label={label} value={label} />)}
     </Picker>
     </View>
   );
