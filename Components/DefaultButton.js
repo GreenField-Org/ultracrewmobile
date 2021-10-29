@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         alignItems:"center",
         justifyContent:"center",
-        backgroundColor:"#F8CD82",
+        backgroundColor:"#0DF7DB",
     }
 })
