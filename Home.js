@@ -15,8 +15,8 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate('MyRaces')}
           />
           <Button
-          title="Profile"
-          onPress={() => navigation.navigate('Profile')}
+          title="My Profile"
+          onPress={() => navigation.navigate('ProfilePage')}
         />
         <Button
         title="Race"
