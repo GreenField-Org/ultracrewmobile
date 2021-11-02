@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
-import DefaultButton from './DefaultButton';
+import DefaultButton from '../Components/DefaultButton';
 
 export default function LoginScreen() {
   //it's binnnaa while since I've used state. But I think this is right
@@ -38,16 +38,17 @@ export default function LoginScreen() {
 
 <DefaultButton buttonText='Login'/>
 
-<TouchableOpacity>
-  <Text style={styles.createAcct}
-    //add onpress.. use react dom to link to new page?
-  >Create an account</Text>
+<TouchableOpacity style={styles.loginButton}>
+<Text>Create an Account</Text>
 </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  createAcctBtn:{
+    width: 50
+  },
   container: {
     flex: 1,
     backgroundColor: '#F8CD82',
