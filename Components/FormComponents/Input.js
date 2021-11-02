@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: "85%",
         height: 45,
-        margin: 30,
+        margin: 5,
         alignItems: "center",
     },
     textInput: {
