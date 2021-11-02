@@ -38,7 +38,7 @@ export default function LoginScreen() {
 
 <DefaultButton buttonText='Login'/>
 
-<TouchableOpacity style={styles.loginButton}>
+<TouchableOpacity style={styles.createAcctBtn}>
 <Text>Create an Account</Text>
 </TouchableOpacity>
     </View>
@@ -47,7 +47,7 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   createAcctBtn:{
-    width: 50
+    width: 130
   },
   container: {
     flex: 1,
