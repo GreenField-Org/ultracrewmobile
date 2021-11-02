@@ -1,11 +1,11 @@
 import React from 'react'
-import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
 
 export default function CreateAcct() {
     return (
-        <View style={styles.form}>
+        <ScrollView style={styles.form}>
             <Text style={styles.titleText}>Create an Account</Text>
             <Input 
                 placeholder='Username'
@@ -43,13 +43,13 @@ export default function CreateAcct() {
             />
 
       <DefaultButton buttonText='Create Account'/>
-      </View>
+      </ScrollView>
       
 
     )}
 
     const styles = StyleSheet.create({
-        form: {
+        container: {
           flex: 1,
           backgroundColor: '#fff',
           alignItems: 'center',
