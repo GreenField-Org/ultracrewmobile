@@ -26,4 +26,5 @@ export default function App() {
         <Stack.Screen name="AidStation" component={AidStation} options={{ title: 'Aid Station'}} />
       </Stack.Navigator>
     </NavigationContainer>
-  )};
+  )
+};

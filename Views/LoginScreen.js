@@ -6,70 +6,62 @@ import DefaultButton from '../Components/DefaultButton';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const customFont = {
+  'Lobster-Regular': require('../assets/fonts/Lobster-Regular.ttf')
+}
+
 export default function LoginScreen({navigation}) {
   //it's binnnaa while since I've used state. But I think this is right
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  let [fontsLoaded] = useFonts({
-    'Lobster-Regular': require('../assets/fonts/Lobster-Regular.ttf')
-  })
+  let [fontsLoaded] = useFonts(customFont)
   
-  return (
-    <View style={styles.container}>
-    <Text style={styles.titleText}> Ultra Crew App</Text>
-      <View style={styles.inputView}>
-  
-  <TextInput
-    style={styles.TextInput}
-    placeholder="email"
-    placeholderTextColor="#003f5c"
-    onChangeText={(email) => setUsername(username)}
-    
-  />
-</View>
+  if (fontsLoaded) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.titleText}>Ultra Crew App</Text>
+        <View style={styles.inputView}>
+        
+          <TextInput
+            style={styles.TextInput}
+            placeholder="email"
+            placeholderTextColor="#003f5c"
+            onChangeText={(email) => setUsername(username)}
+          />
+        </View>
  
-<View style={styles.inputView}>
-  <TextInput
-    style={styles.TextInput}
-    placeholder="password"
-    placeholderTextColor="#003f5c"
-    //should we add option to show pw when you're done typing it?
-    secureTextEntry={true}
-    onChangeText={(password) => setPassword(password)}
-  />
-</View>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.TextInput}
+            placeholder="password"
+            placeholderTextColor="#003f5c"
+            //should we add option to show pw when you're done typing it?
+            secureTextEntry={true}
+            onChangeText={(password) => setPassword(password)}
+          />
+        </View>
 
-<DefaultButton buttonText='Login'/>
+        <DefaultButton buttonText='Login'/>
 
-<Button title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}/>
-</View>
+        <Button title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}/>
+     </View>
   )}
+
 
 const styles = StyleSheet.create({
   createAcctBtn:{
     width: 130
   },
   container: {
-    flex: 1,
     backgroundColor: '#F8CD82',
     alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 150
+    justifyContent: 'center'
   },
-
   titleText: {
     fontSize: 40,
-    marginBottom: 40,
+    marginBottom: 50,
     fontFamily: 'Lobster-Regular'
   },
-
-  image :{
-    marginBottom: 40,
-    height: 100, 
-    width: 200,
-    borderRadius: 10
-  },
-
   inputView: {
     backgroundColor: "lightgray",
     borderRadius: 5,
@@ -78,7 +70,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     alignItems: "center",
   },
-  
   TextInput: {
     height: 50,
     flex: 1,
