@@ -13,22 +13,17 @@ import AidStation from './Views/Aid-Station';
 
 const Stack = createNativeStackNavigator();
 
-export default function App({navigation}) {
+export default function App() {
   return(
-    <View>
     <NavigationContainer>
     <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login'}} />
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="MyRaces" component={MyRaces} options={{ title: 'My Races'}} />
         <Stack.Screen name="Home" component={Home} options={{ title: 'Home'}} />
         <Stack.Screen name="CreateAcct" component={CreateAcct} options={{ title: 'Create Account'}} />
         <Stack.Screen name="Race" component={Race} options={{ title: 'Race'}} />
         <Stack.Screen name="ProfilePage" component={ProfilePage} options={{ title: 'My Profile'}} />
         <Stack.Screen name="AidStation" component={AidStation} options={{ title: 'Aid Station'}} />
-
       </Stack.Navigator>
     </NavigationContainer>
-
-
-    </View>
   )};

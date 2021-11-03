@@ -6,7 +6,7 @@ import DefaultButton from '../Components/DefaultButton';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
   //it's binnnaa while since I've used state. But I think this is right
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
