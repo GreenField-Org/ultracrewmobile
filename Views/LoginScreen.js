@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-native';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import DefaultButton from '../Components/DefaultButton';
