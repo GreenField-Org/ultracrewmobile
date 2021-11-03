@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import DefaultButton from '../Components/DefaultButton';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function LoginScreen() {
   //it's binnnaa while since I've used state. But I think this is right
