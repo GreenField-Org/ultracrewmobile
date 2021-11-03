@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { Button } from 'react-native';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import DefaultButton from '../Components/DefaultButton';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const customFont = {
   'Lobster-Regular': require('../assets/fonts/Lobster-Regular.ttf')
 }
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
   //it's binnnaa while since I've used state. But I think this is right
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -40,21 +43,15 @@ export default function LoginScreen() {
 
         <DefaultButton buttonText='Login'/>
 
-        <TouchableOpacity>
-          <Text style={styles.createAcct}
-            //add onpress.. use react dom to link to new page?
-          >Create an account</Text>
-        </TouchableOpacity>
-      </View>
-    )
-  } else {
-    return (
-      <View />
-    )
-  }
-}
+        <Button title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}/>
+     </View>
+  )}
+
 
 const styles = StyleSheet.create({
+  createAcctBtn:{
+    width: 130
+  },
   container: {
     backgroundColor: '#F8CD82',
     alignItems: 'center',
