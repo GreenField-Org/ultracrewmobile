@@ -40,12 +40,9 @@ export default function LoginScreen() {
 
 <DefaultButton buttonText='Login'/>
 
-<TouchableOpacity style={styles.createAcctBtn}>
-<Text>Create an Account</Text>
-</TouchableOpacity>
-    </View>
-  );
-}
+<Button title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}/>
+</View>
+  )}
 
 const styles = StyleSheet.create({
   createAcctBtn:{
