@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import DefaultButton from './Components/DefaultButton';
 import { Button } from 'react-native';
 
 
