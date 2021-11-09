@@ -46,7 +46,12 @@ export default function LoginScreen({navigation}) {
         <Button title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}/>
      </View>
   )}
-
+  else{
+    return(
+      <View/>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   createAcctBtn:{
@@ -94,4 +99,3 @@ const styles = StyleSheet.create({
  }
 
 });
-}
