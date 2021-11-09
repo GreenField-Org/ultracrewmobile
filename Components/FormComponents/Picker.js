@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import {Picker} from '@react-native-picker/picker';
 
-export default function PickerComponent({itemList}){
+export default function PickerComponent({itemList = []}){
   const [selectedValue, setSelectedValue] = useState("");
-  // pass in itemList prop as an array in order to create item dropdown
   return (
     <View style={styles.container}>
     <Picker>
-      {labelList.map(label => <Picker.Item label={label} value={label} />)}
+      {itemList.map(label => <Picker.Item label={label} value={label} />)}
     </Picker>
     </View>
   );

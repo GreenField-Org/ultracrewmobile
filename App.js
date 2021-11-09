@@ -13,8 +13,6 @@ import AidStation from './Views/Aid-Station';
 
 const Stack = createNativeStackNavigator();
 
-const Stack = createNativeStackNavigator();
-
 export default function App({navigation}) {
   return(
     <NavigationContainer>
