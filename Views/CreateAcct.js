@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
+import CountrySelect from '../Components/FormComponents/CountryPicker';
 
 export default function CreateAcct() {
     return (
@@ -26,9 +27,7 @@ export default function CreateAcct() {
                 placeholder='Weight'
                 type = 'numeric'
             />
-            <Input 
-                placeholder='Country'
-            />
+            <CountrySelect/>
             <Input 
                 placeholder='Street address'
             />
