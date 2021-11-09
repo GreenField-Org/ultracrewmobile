@@ -1,54 +1,37 @@
 import React from 'react'
-import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
+import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
-import CountrySelect from '../Components/FormComponents/CountryPicker';
 
-export default function CreateAcct() {
+export default function CreateRace() {
     return (
-        <ScrollView style={styles.form}>
-            <Text style={styles.titleText}>Create an Account</Text>
+        <View style={styles.form}>
+            <Text style={styles.titleText}>Create a Race</Text>
             <Input 
-                placeholder='Username'
+                placeholder='Race Name'
             />
             <Input
-                placeholder='First Name'
+                placeholder='Date'
             />
             <Input 
-                placeholder='Middle initial'
-            />
-            <Input 
-                placeholder='Last Name'
-            />
-            <Input 
-                placeholder='Date of birth'
-            />
-            <Input 
-                placeholder='Weight'
+                placeholder='Distance/Goal'
                 type = 'numeric'
             />
-            <CountrySelect/>
             <Input 
-                placeholder='Street address'
+                placeholder='Time Allotted'
             />
             <Input 
-                placeholder='Email'
-            />
-            <Input 
-                placeholder='Telephone Number'
-            />
-            <Input 
-                placeholder='User Tier'
+                placeholder='Location'
             />
 
-      <DefaultButton buttonText='Create Account'/>
-      </ScrollView>
+      <DefaultButton buttonText='Create Race'/>
+      </View>
       
 
     )}
 
     const styles = StyleSheet.create({
-        container: {
+        form: {
           flex: 1,
           backgroundColor: '#fff',
           alignItems: 'center',
