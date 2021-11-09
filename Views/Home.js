@@ -4,7 +4,8 @@ import DefaultButton from './Components/DefaultButton';
 import { Button } from 'react-native';
 
 
-/*  This should be moved into the View folder once all page creations are merged back into main */ 
+/*  This should be moved into the View folder once all page creations are merged back into main */
+/* will need to add navigation to each button here */ 
 
 export default function Home({ navigation }) {
     return (

@@ -19,7 +19,7 @@ export default function PhoneNumber(){
             //ref={phoneInput}
             style={styles.phone}
             defaultValue={value}
-            defaultCode="IN"
+            defaultCode="US"
             onChangeFormattedText={(text) => {
               setValue(text);
             }}
@@ -33,5 +33,7 @@ export default function PhoneNumber(){
 const styles = StyleSheet.create({
     phone: {
         width: 300,
+        height: 100,
+        justifyContent: 'center',
     }
 })
