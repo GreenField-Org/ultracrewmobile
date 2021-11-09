@@ -8,5 +8,6 @@ export default function CountrySelect(){
         //defaultCountry={'US'}
         fontFamily={"arial"}
         textColor={"black"}
+        countrySelect= { () => {} }
     />
     )}
