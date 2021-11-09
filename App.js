@@ -13,7 +13,9 @@ import AidStation from './Views/Aid-Station';
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+export default function App({navigation}) {
   return(
     <NavigationContainer>
     <Stack.Navigator initialRouteName="Login">
