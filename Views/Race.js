@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-/* this should be moved to the Views folder ones all pages have been merged to main */
+/* this is for the current race in progress */
 
 export default function Race({ name }) {
     return (
