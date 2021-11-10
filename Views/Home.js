@@ -32,7 +32,7 @@ export default function Home({ navigation }) {
         </Pressable>
 
       <Pressable
-      title="Create Aid Station"
+      title="Create Aid"
       style={styles.button}
       backgroundColor= 'blue'
       onPress={() => navigation.navigate('AidStation')}>
@@ -47,9 +47,10 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    width: 120,
-    paddingHorizontal: 10,
+    paddingVertical: 20,
+    width: 100,
+    height: 100,
+    paddingHorizontal: 15,
     borderRadius: 60,
     elevation: 3,
     backgroundColor: 'orange',
