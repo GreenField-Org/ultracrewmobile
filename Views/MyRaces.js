@@ -12,7 +12,7 @@ export default function MyRaces({navigation}) {
                 onPress={() => navigation.navigate('CreateRace')}/>
             <Button 
                 title='Current Race'
-                onPress={() => navigation.navigate('CurrentRaces')}/>
+                onPress={() => navigation.navigate('CurrentRace')}/>
             <Button 
                 title='Completed Races'
                 onPress={() => navigation.navigate('CompletedRaces')}/>
