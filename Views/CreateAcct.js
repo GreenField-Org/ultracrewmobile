@@ -4,7 +4,7 @@ import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
 import CountrySelect from '../Components/FormComponents/CountryPicker';
 
-export default function CreateAcct() {
+export default function CreateAcct({navigation}) {
     return (
         <ScrollView style={styles.form}>
             <Text style={styles.titleText}>Create an Account</Text>
@@ -41,7 +41,7 @@ export default function CreateAcct() {
                 placeholder='User Tier'
             />
 
-      <DefaultButton buttonText='Create Account'/>
+      <Button title='Create Account' onPress={() => navigation.navigate('Home')}/>
       </ScrollView>
       
 
