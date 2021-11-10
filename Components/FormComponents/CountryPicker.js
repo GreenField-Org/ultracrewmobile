@@ -6,7 +6,6 @@ export default function CountrySelect(){
 
     <CountrySelectDropdown
         //defaultCountry={'US'}
-        fontFamily={"arial"}
         textColor={"black"}
         countrySelect= { () => {} }
     />
