@@ -14,21 +14,21 @@ export default function Home({ navigation }) {
               color= 'black'
               style={styles.button}
               onPress={() => navigation.navigate('MyRaces')}>
-              <Text>My Races</Text>
+              <Text style={styles.text}>My Races</Text>
             </Pressable>
           
           <Pressable
           title="My Profile"
           style={styles.button}
           onPress={() => navigation.navigate('ProfilePage')}>
-            <Text>My Profile</Text>
+            <Text style={styles.text}>My Profile</Text>
           </Pressable>
 
         <Pressable
         title="My Races"
         style={styles.button}
         onPress={() => navigation.navigate('Race')}>
-          <Text>My Races</Text>
+          <Text style={styles.text}>My Races</Text>
         </Pressable>
 
       <Pressable
@@ -36,7 +36,7 @@ export default function Home({ navigation }) {
       style={styles.button}
       backgroundColor= 'blue'
       onPress={() => navigation.navigate('AidStation')}>
-        <Text>Create Aid</Text>
+        <Text style={styles.text}>Create Aid</Text>
       </Pressable>
     
         </View>
@@ -44,12 +44,17 @@ export default function Home({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  text:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
   button: {
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 20,
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
     paddingHorizontal: 15,
     borderRadius: 60,
     elevation: 3,
