@@ -8,7 +8,7 @@ import { Button, Pressable } from 'react-native';
 
 export default function Home({ navigation }) {
     return (
-        <View>
+        <View style={styles.container}>
             <Pressable
               title="My Races"
               color= 'black'
@@ -36,7 +36,7 @@ export default function Home({ navigation }) {
       style={styles.button}
       backgroundColor= 'blue'
       onPress={() => navigation.navigate('AidStation')}>
-        <Text>Create Aid Station</Text>
+        <Text>Create Aid</Text>
       </Pressable>
     
         </View>
@@ -53,6 +53,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     borderRadius: 60,
     elevation: 3,
-    backgroundColor: 'orange',
-  }
+    marginTop: 15,
+    backgroundColor: '#0DF7DB',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#F8CD82',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 })
