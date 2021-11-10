@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F8CD82',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    flex: 1
   },
   titleText: {
     fontSize: 40,
