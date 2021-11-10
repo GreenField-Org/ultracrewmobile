@@ -10,27 +10,35 @@ export default function Home({ navigation }) {
     return (
         <View>
             <Pressable
-            title="My Races"
-            color= 'black'
-            style={styles.button}
-            onPress={() => navigation.navigate('MyRaces')}
-          />
+              title="My Races"
+              color= 'black'
+              style={styles.button}
+              onPress={() => navigation.navigate('MyRaces')}>
+              <Text>My Races</Text>
+            </Pressable>
+          
           <Pressable
           title="My Profile"
-          color= 'black'
-          onPress={() => navigation.navigate('ProfilePage')}
-        />
+          style={styles.button}
+          onPress={() => navigation.navigate('ProfilePage')}>
+            <Text>My Profile</Text>
+          </Pressable>
+
         <Pressable
         title="My Races"
-        color= 'black'
-        onPress={() => navigation.navigate('Race')}
-      />
+        style={styles.button}
+        onPress={() => navigation.navigate('Race')}>
+          <Text>My Races</Text>
+        </Pressable>
+
       <Pressable
       title="Create Aid Station"
-      color= 'black'
+      style={styles.button}
       backgroundColor= 'blue'
-      onPress={() => navigation.navigate('AidStation')}
-    />
+      onPress={() => navigation.navigate('AidStation')}>
+        <Text>Create Aid Station</Text>
+      </Pressable>
+    
         </View>
     )
 }
@@ -40,9 +48,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
+    width: 120,
+    paddingHorizontal: 10,
+    borderRadius: 60,
     elevation: 3,
-    backgroundColor: 'black',
+    backgroundColor: 'orange',
   }
 })
