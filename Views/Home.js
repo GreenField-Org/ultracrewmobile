@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Button } from 'react-native';
+import { Button, Pressable } from 'react-native';
 
 
 /*  This should be moved into the View folder once all page creations are merged back into main */
@@ -9,23 +9,40 @@ import { Button } from 'react-native';
 export default function Home({ navigation }) {
     return (
         <View>
-            <Text>Main Menu</Text>
-            <Button
+            <Pressable
             title="My Races"
+            color= 'black'
+            style={styles.button}
             onPress={() => navigation.navigate('MyRaces')}
           />
-          <Button
+          <Pressable
           title="My Profile"
+          color= 'black'
           onPress={() => navigation.navigate('ProfilePage')}
         />
-        <Button
-        title="Race"
+        <Pressable
+        title="My Races"
+        color= 'black'
         onPress={() => navigation.navigate('Race')}
       />
-      <Button
+      <Pressable
       title="Create Aid Station"
+      color= 'black'
+      backgroundColor= 'blue'
       onPress={() => navigation.navigate('AidStation')}
     />
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'black',
+  }
+})
