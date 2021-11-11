@@ -23,16 +23,17 @@ export default function Home({ navigation }) {
           onPress={() => navigation.navigate('ProfilePage')}>
             <Text style={styles.text}>My Profile</Text>
           </Pressable>
-
+    {/*will need to add functional nagivation*/}
         <Pressable
-        title="View My Races"
+        title="Create a Race"
         style={styles.button}
-        onPress={() => navigation.navigate('Race')}>
+        onPress={() => navigation.navigate('')}>
           <Text style={styles.text}>Create a Race</Text>
         </Pressable>
 
+        {/*will need to add functional nagivation*/}
       <Pressable
-      title="Create Aid"
+      title="Settings"
       style={styles.button}
       backgroundColor= 'blue'
       onPress={() => navigation.navigate()}>
