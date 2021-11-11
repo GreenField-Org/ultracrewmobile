@@ -42,7 +42,7 @@ export default function LoginScreen({navigation}) {
 
         <Pressable
         title="Login"
-        style={styles.button}
+        style={styles.loginButton}
         onPress={() => navigation.navigate('Home')}>
           <Text style={styles.text}>Login</Text>
         </Pressable>
