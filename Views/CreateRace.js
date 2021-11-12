@@ -3,9 +3,9 @@ import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'rea
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
 
-export default function CreateRace() {
+export default function CreateRace({navigation}) {
     return (
-        <View style={styles.form}>
+        <View style={styles.container}>
             <Text style={styles.titleText}>Create a Race</Text>
             <Input 
                 placeholder='Race Name'
@@ -31,12 +31,12 @@ export default function CreateRace() {
     )}
 
     const styles = StyleSheet.create({
-        form: {
-          flex: 1,
-          backgroundColor: '#fff',
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
+      container: {
+        backgroundColor: '#F8CD82',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
+      },
       
         titleText:{
           fontSize: 25,
