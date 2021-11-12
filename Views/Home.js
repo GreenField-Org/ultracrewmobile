@@ -14,7 +14,7 @@ export default function Home({ navigation }) {
               color= 'black'
               style={styles.button}
               onPress={() => navigation.navigate('MyRaces')}>
-              <Text style={styles.text}>My Races</Text>
+              <Text style={styles.text}>View My Races</Text>
             </Pressable>
           
           <Pressable
@@ -23,20 +23,21 @@ export default function Home({ navigation }) {
           onPress={() => navigation.navigate('ProfilePage')}>
             <Text style={styles.text}>My Profile</Text>
           </Pressable>
-
+    {/*will need to add functional nagivation*/}
         <Pressable
-        title="My Races"
+        title="Create a Race"
         style={styles.button}
-        onPress={() => navigation.navigate('Race')}>
-          <Text style={styles.text}>My Races</Text>
+        onPress={() => navigation.navigate('')}>
+          <Text style={styles.text}>Create a Race</Text>
         </Pressable>
 
+        {/*will need to add functional nagivation*/}
       <Pressable
-      title="Create Aid"
+      title="Settings"
       style={styles.button}
       backgroundColor= 'blue'
-      onPress={() => navigation.navigate('AidStation')}>
-        <Text style={styles.text}>Create Aid</Text>
+      onPress={() => navigation.navigate()}>
+        <Text style={styles.text}>Settings</Text>
       </Pressable>
     
         </View>
