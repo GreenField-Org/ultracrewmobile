@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-native';
+import { Button, Pressable } from 'react-native';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import DefaultButton from '../Components/DefaultButton';
@@ -43,7 +43,9 @@ export default function LoginScreen({navigation}) {
 
         <DefaultButton buttonText='Login'/>
 
-        <Button title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}/>
+        <Pressable title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}>
+          <Text style={styles.createAcctBtn}>Create an Account</Text>
+        </Pressable>
      </View>
   )}
   else{
@@ -55,7 +57,7 @@ export default function LoginScreen({navigation}) {
 
 const styles = StyleSheet.create({
   createAcctBtn:{
-    width: 130
+    fontSize: 20
   },
   container: {
     backgroundColor: '#F8CD82',
