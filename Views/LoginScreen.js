@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Pressable } from 'react-native';
 import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
-import DefaultButton from '../Components/DefaultButton';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -41,7 +40,12 @@ export default function LoginScreen({navigation}) {
           />
         </View>
 
-        <DefaultButton buttonText='Login'/>
+        <Pressable
+        title="Login"
+        style={styles.loginButton}
+        onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.text}>Login</Text>
+        </Pressable>
 
         <Pressable title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}>
           <Text style={styles.createAcctBtn}>Create an Account</Text>
