@@ -6,7 +6,7 @@ import Input from '../Components/FormComponents/Input';
 export default function CreateRace({navigation}) {
     return (
         <View style={styles.container}>
-            <Text style={styles.titleText}>Create a Race</Text>
+        <Text style={styles.titleText}>Create a Race</Text>
             <Input 
                 placeholder='Race Name'
             />
@@ -35,15 +35,16 @@ export default function CreateRace({navigation}) {
         backgroundColor: '#F8CD82',
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        textAlignVertical: 'top'
       },
       
         titleText:{
           fontSize: 25,
-          backgroundColor: 'orange',
           paddingLeft: 58,
-          paddingRight: 58
-
+          paddingRight: 58,
+          padding: 20,
+          fontSize: 30
         },
       
         inputView: {
