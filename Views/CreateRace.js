@@ -1,12 +1,12 @@
 import React from 'react'
-import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, Pressable } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
 
-export default function CreateRace() {
+export default function CreateRace({navigation}) {
     return (
-        <View style={styles.form}>
-            <Text style={styles.titleText}>Create a Race</Text>
+        <View style={styles.container}>
+        <Text style={styles.titleText}>Create a Race</Text>
             <Input 
                 placeholder='Race Name'
             />
@@ -24,26 +24,25 @@ export default function CreateRace() {
                 placeholder='Location'
             />
 
-      <DefaultButton buttonText='Create Race'/>
+      <Pressable style={styles.submitButton}><Text>Create Race</Text>
+      </Pressable>
       </View>
-      
-
     )}
 
     const styles = StyleSheet.create({
-        form: {
-          flex: 1,
-          backgroundColor: '#fff',
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
+      container: {
+        backgroundColor: '#F8CD82',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+      },
       
         titleText:{
           fontSize: 25,
-          backgroundColor: 'orange',
           paddingLeft: 58,
-          paddingRight: 58
-
+          paddingRight: 58,
+          padding: 20,
+          fontSize: 30
         },
       
         inputView: {
@@ -74,11 +73,6 @@ export default function CreateRace() {
           marginBottom: 20,
           alignItems: "center",
         },
-
-        btnText: {
-      
-        },
-      
         submitButton:
        {
          width:"80%",
@@ -88,6 +82,6 @@ export default function CreateRace() {
          marginTop: 10,
          alignItems:"center",
          justifyContent:"center",
-         backgroundColor:"orange",
+         backgroundColor:"#0DF7DB",
        }
        })
