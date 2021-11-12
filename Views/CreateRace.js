@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, Pressable } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
 
@@ -24,10 +24,9 @@ export default function CreateRace({navigation}) {
                 placeholder='Location'
             />
 
-      <DefaultButton buttonText='Create Race'/>
+      <Pressable style={styles.submitButton}><Text>Create Race</Text>
+      </Pressable>
       </View>
-      
-
     )}
 
     const styles = StyleSheet.create({
@@ -36,7 +35,6 @@ export default function CreateRace({navigation}) {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        textAlignVertical: 'top'
       },
       
         titleText:{
@@ -75,11 +73,6 @@ export default function CreateRace({navigation}) {
           marginBottom: 20,
           alignItems: "center",
         },
-
-        btnText: {
-      
-        },
-      
         submitButton:
        {
          width:"80%",
@@ -89,6 +82,6 @@ export default function CreateRace({navigation}) {
          marginTop: 10,
          alignItems:"center",
          justifyContent:"center",
-         backgroundColor:"orange",
+         backgroundColor:"#0DF7DB",
        }
        })
