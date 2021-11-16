@@ -3,8 +3,10 @@ import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
 import CountrySelect from '../Components/FormComponents/CountryPicker';
+import Toast from 'react-native-root-toast';
 
 export default function CreateAcct({navigation}) {
+
     return (
         <ScrollView style={styles.form}>
             <Text style={styles.titleText}>Create an Account</Text>
