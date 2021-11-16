@@ -12,6 +12,7 @@ import ProfilePage from './Views/ProfilePage';
 import AidStation from './Views/Aid-Station';
 import CompletedRaces from './Views/CompletedRaces';
 import CreateRace from './Views/CreateRace';
+import { RootSiblingParent } from 'react-native-root-siblings';
 
 const Stack = createNativeStackNavigator();
 
