@@ -2,8 +2,11 @@ import React from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import CountrySelect from '../Components/FormComponents/CountryPicker';
+import PickerComponent from '../Components/FormComponents/Picker';
 
 export default function CreateAid({navigation}) {
+let raceList = ['race one', 'race two', 'race three']
+
     return (
         <ScrollView style={styles.form}>
             <Text style={styles.titleText}>Create an Aid Station</Text>
@@ -14,6 +17,7 @@ export default function CreateAid({navigation}) {
                 placeholder='Distance Point'
                 type = 'numeric'
             />
+            <PickerComponent/>
 
       <Button title='Create Aid Station' onPress={() => navigation.navigate('Race')}/>
       </ScrollView>
