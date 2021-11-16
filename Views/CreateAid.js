@@ -8,36 +8,11 @@ export default function CreateAid({navigation}) {
         <ScrollView style={styles.form}>
             <Text style={styles.titleText}>Create an Aid Station</Text>
             <Input 
-                placeholder='Username'
+                placeholder='Aid Station Name'
             />
             <Input
-                placeholder='First Name'
-            />
-            <Input 
-                placeholder='Middle initial'
-            />
-            <Input 
-                placeholder='Last Name'
-            />
-            <Input 
-                placeholder='Date of birth'
-            />
-            <Input 
-                placeholder='Weight'
+                placeholder='Distance Point'
                 type = 'numeric'
-            />
-            <CountrySelect/>
-            <Input 
-                placeholder='Street address'
-            />
-            <Input 
-                placeholder='Email'
-            />
-            <Input 
-                placeholder='Telephone Number'
-            />
-            <Input 
-                placeholder='User Tier'
             />
 
       <Button title='Create Aid Station' onPress={() => navigation.navigate('Race')}/>
