@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef }  from 'react'
 import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
@@ -6,6 +6,7 @@ import CountrySelect from '../Components/FormComponents/CountryPicker';
 import Toast from 'react-native-whc-toast'
 
 export default function CreateAcct({navigation}) {
+  const toastRef = useRef(null)
     return (
         <ScrollView style={styles.form}>
             <Text style={styles.titleText}>Create an Account</Text>
@@ -43,9 +44,9 @@ export default function CreateAcct({navigation}) {
             />
 
       <Button title='Create Account' onPress={()=>{
-        this.refs.toast.show('hello toast');
-    }}/>
-      <Toast useRef={("toast")}/>
+        toastRef.show('Account Created!');
+      }}/>
+      <Toast ref= {toastRef}/>
       </ScrollView>
       
 
