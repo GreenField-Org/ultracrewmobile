@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
+import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, Pressable } from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import CountrySelect from '../Components/FormComponents/CountryPicker';
 import PickerComponent from '../Components/FormComponents/Picker';
@@ -8,7 +8,7 @@ export default function CreateAid({navigation}) {
 let raceList = ['race one', 'race two', 'race three']
 
     return (
-        <ScrollView style={styles.form}>
+      <View style={styles.container}>
             <Text style={styles.titleText}>Create an Aid Station</Text>
             <Input 
                 placeholder='Aid Station Name'
@@ -17,28 +17,26 @@ let raceList = ['race one', 'race two', 'race three']
                 placeholder='Distance Point'
                 type = 'numeric'
             />
-            <PickerComponent/>
-
-      <Button title='Create Aid Station' onPress={() => navigation.navigate('Race')}/>
-      </ScrollView>
+            <Pressable style={styles.submitButton}><Text>Create Aid Station</Text>
+            </Pressable>
+      </View>
       
 
     )}
 
     const styles = StyleSheet.create({
-        container: {
-          flex: 1,
-          backgroundColor: '#fff',
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
+      container: {
+        backgroundColor: '#F8CD82',
+        alignItems: 'center',
+        flex: 1,
+      },
       
         titleText:{
           fontSize: 25,
-          backgroundColor: 'orange',
           paddingLeft: 58,
-          paddingRight: 58
-
+          paddingRight: 58,
+          padding: 20,
+          fontSize: 30
         },
       
         inputView: {
@@ -69,11 +67,6 @@ let raceList = ['race one', 'race two', 'race three']
           marginBottom: 20,
           alignItems: "center",
         },
-
-        btnText: {
-      
-        },
-      
         submitButton:
        {
          width:"80%",
@@ -83,6 +76,6 @@ let raceList = ['race one', 'race two', 'race three']
          marginTop: 10,
          alignItems:"center",
          justifyContent:"center",
-         backgroundColor:"orange",
+         backgroundColor:"#0DF7DB",
        }
        })
