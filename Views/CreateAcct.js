@@ -3,6 +3,7 @@ import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View, ScrollView
 import DefaultButton from '../Components/DefaultButton';
 import Input from '../Components/FormComponents/Input';
 import CountrySelect from '../Components/FormComponents/CountryPicker';
+import Toast from 'react-native-whc-toast'
 
 export default function CreateAcct({navigation}) {
     return (
@@ -41,7 +42,10 @@ export default function CreateAcct({navigation}) {
                 placeholder='User Tier'
             />
 
-      <Button title='Create Account' onPress={() => navigation.navigate('Home')}/>
+      <Button title='Create Account' onPress={()=>{
+        this.refs.toast.show('hello toast');
+    }}/>
+      <Toast useRef={("toast")}/>
       </ScrollView>
       
 
