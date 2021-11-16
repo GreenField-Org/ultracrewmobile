@@ -17,6 +17,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App({navigation}) {
   return(
+    <RootSiblingParent>
     <NavigationContainer>
     <Stack.Navigator initialRouteName="Login">
         <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
@@ -30,5 +31,6 @@ export default function App({navigation}) {
         <Stack.Screen name="AidStation" component={AidStation} options={{ title: 'Aid Station'}} />
       </Stack.Navigator>
     </NavigationContainer>
+    </RootSiblingParent>
   )
 };
