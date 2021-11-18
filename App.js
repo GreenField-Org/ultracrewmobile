@@ -12,6 +12,7 @@ import ProfilePage from './Views/ProfilePage';
 import AidStation from './Views/Aid-Station';
 import CompletedRaces from './Views/CompletedRaces';
 import CreateRace from './Views/CreateRace';
+import CreateAid from './Views/CreateAid';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ export default function App({navigation}) {
         <Stack.Screen name="MyRaces" component={MyRaces} options={{ title: 'My Races'}} />
         <Stack.Screen name="Home" component={Home} options={{ title: 'Home'}} />
         <Stack.Screen name="CreateAcct" component={CreateAcct} options={{ title: 'Create Account'}} />
+        <Stack.Screen name="CreateAid" component={CreateAid} options={{ title: 'Create Aid Station'}} />
         <Stack.Screen name="CurrentRace" component={Race} options={{ title: 'Current Race'}} />
         <Stack.Screen name="CreateRace" component={CreateRace} options={{ title: 'Create Race'}} />
         <Stack.Screen name="CompletedRaces" component={CompletedRaces} options={{ title: 'Completed Races'}} />
