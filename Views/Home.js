@@ -27,7 +27,7 @@ export default function Home({ navigation }) {
         <Pressable
         title="Create a Race"
         style={styles.button}
-        onPress={() => navigation.navigate('')}>
+        onPress={() => navigation.navigate('CreateRace')}>
           <Text style={styles.text}>Create a Race</Text>
         </Pressable>
 
