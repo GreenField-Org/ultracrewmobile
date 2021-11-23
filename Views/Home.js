@@ -39,6 +39,13 @@ export default function Home({ navigation }) {
       onPress={() => navigation.navigate()}>
         <Text style={styles.text}>Settings</Text>
       </Pressable>
+
+      <Pressable
+      title="Logout"
+      style={styles.button}
+      backgroundColor= 'blue'>
+        <Text style={styles.text}>Logout</Text>
+      </Pressable>
     
         </View>
     )
@@ -54,8 +61,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 20,
-    width: 120,
-    height: 120,
+    width: 110,
+    height: 110,
     paddingHorizontal: 15,
     borderRadius: 60,
     elevation: 3,
