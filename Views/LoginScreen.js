@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
-import { Button, Pressable } from 'react-native';
-import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity } from 'react-native';
-import { useFonts } from 'expo-font';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useState } from "react";
+import { Pressable } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
+import { useFonts } from "expo-font";
 
 const customFont = {
-  'Lobster-Regular': require('../assets/fonts/Lobster-Regular.ttf')
-}
+  "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
+};
 
-export default function LoginScreen({navigation}) {
-  //it's binnnaa while since I've used state. But I think this is right
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  let [fontsLoaded] = useFonts(customFont)
+export default function LoginScreen({ navigation }) {
   
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  let [fontsLoaded] = useFonts(customFont);
+
   if (fontsLoaded) {
     return (
       <View style={styles.container}>
         <Text style={styles.titleText}>Ultra Crew App</Text>
         <View style={styles.inputView}>
-        
           <TextInput
             style={styles.TextInput}
             placeholder="email"
@@ -28,7 +25,7 @@ export default function LoginScreen({navigation}) {
             onChangeText={(email) => setUsername(username)}
           />
         </View>
- 
+
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
@@ -41,42 +38,45 @@ export default function LoginScreen({navigation}) {
         </View>
 
         <Pressable
-        title="Login"
-        style={styles.loginButton}
-        onPress={() => navigation.navigate('Home')}>
+          title="Login"
+          style={styles.loginButton}
+          onPress={() => navigation.navigate("Home")}
+        >
           <Text style={styles.text}>Login</Text>
         </Pressable>
 
-        <Pressable title="Create an Account" style={styles.createAcctBtn} onPress={() => navigation.navigate('CreateAcct')}>
+        <Pressable
+          title="Create an Account"
+          style={styles.createAcctBtn}
+          onPress={() => navigation.navigate("CreateAcct")}
+        >
           <Text style={styles.createAcctBtn}>Create an Account</Text>
         </Pressable>
-     </View>
-  )}
-  else{
-    return(
-      <View/>
-    )
+      </View>
+    );
+  } else {
+    return <View />;
   }
 }
 
 const styles = StyleSheet.create({
-  createAcctBtn:{
-    fontSize: 20
+  createAcctBtn: {
+    fontSize: 20,
   },
   container: {
-    backgroundColor: '#F8CD82',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1
+    backgroundColor: "#F8CD82",
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
   },
   titleText: {
     fontSize: 40,
     marginBottom: 50,
-    fontFamily: 'Lobster-Regular'
+    fontFamily: "Lobster-Regular",
   },
   inputView: {
     backgroundColor: "lightgray",
-    borderRadius: 5,
+    borderRadius: 10,
     width: "80%",
     height: 45,
     marginBottom: 20,
@@ -88,21 +88,22 @@ const styles = StyleSheet.create({
     fontSize: 20,
     padding: 5,
     marginLeft: 20,
+    textAlign: "center",
   },
 
   createAcct: {
-    marginTop: 40
+    marginTop: 60,
   },
 
-  loginButton:
- {
-   width:"80%",
-   borderRadius:10,
-   height:50,
-   fontSize: 20,
-   alignItems:"center",
-   justifyContent:"center",
-   backgroundColor:"#0DF7DB",
- }
-
+  loginButton: {
+    width: "80%",
+    borderRadius: 10,
+    marginBottom: 35,
+    height: 50,
+    fontSize: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#0DF7DB",
+    fontWeight: 700,
+  },
 });
