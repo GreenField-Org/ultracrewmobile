@@ -1,12 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, Pressable, View } from 'react-native';
 
 export default function DefaultButton ({ buttonText }) {
     return (
         <View style={{ width: "100%" }}>
-            <TouchableOpacity style={styles.loginButton}>
-                <Text>{buttonText}</Text>
-            </TouchableOpacity>
+            <Pressable
+                title="Login"
+                style={styles.loginButton}
+                onPress={() => navigation.navigate('Home')}
+            >
+                <Text style={styles.text}>Login</Text>
+            </Pressable>
         </View>
     )
 }
