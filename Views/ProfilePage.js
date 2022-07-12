@@ -1,10 +1,29 @@
 import React from 'react'
-import { StyleSheet, Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from "expo-font";
+
+const customFont = {
+  "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
+};
 
 export default function ProfilePage({navigation}) {
-    return (
-        <View>
-            <Text>Profile page will go here.</Text>
-        </View>
-    )
+    let [fontsLoaded] = useFonts(customFont);
+
+    if (fontsLoaded) {
+        return (
+            <View>
+                <Text>Profile page will go here.</Text>
+            </View>
+        )   
+    } else {
+        return <View/>
+    }
 }
+
+const styles = StyleSheet.create({
+    titleText: {
+        fontSize: 30,
+        marginBottom: 50,
+        fontFamily: 'Lobster-Regular',
+    },
+})
