@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Button, Text, ScrollView, View } from 'react-native';
+import { StyleSheet, Button, Text, ScrollView, View, Pressable } from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import CountrySelect from '../Components/FormComponents/CountryPicker';
 import { useFonts } from "expo-font";
@@ -48,7 +48,13 @@ export default function CreateAcct({navigation}) {
                     placeholder='User Tier'
                 />
 
-          <Button title='Create Account' onPress={() => navigation.navigate('Home')}/>
+                <Pressable
+                title="Create Account"
+                style={styles.submitButton}
+                onPress={() => navigation.navigate("Home")}
+                >
+                    <Text style={styles.text}>Create Account</Text>
+                </Pressable>
           </ScrollView>
           
 
@@ -98,17 +104,18 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         alignItems: "center",
     },
-    submitButton: {
-        width:"80%",
-        borderRadius:10,
-        height:50,
-        fontSize: 20,
-        marginTop: 10,
-        alignItems:"center",
-        justifyContent:"center",
-        backgroundColor:"orange",
-    },
     form: {
         backgroundColor: '#F8CD82',
-    }
+    },
+    submitButton: {
+        width: "80%",
+        borderRadius: 10,
+        marginBottom: 35,
+        height: 50,
+        fontSize: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#0DF7DB",
+        fontWeight: 700,
+    },
 })
