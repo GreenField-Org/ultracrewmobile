@@ -107,5 +107,8 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor:"orange",
+    },
+    form: {
+        backgroundColor: '#F8CD82',
     }
 })
