@@ -74,8 +74,7 @@ const styles = StyleSheet.create({
     titleText: { 
         fontSize: 25,
         backgroundColor: 'orange',
-        paddingLeft: 58,
-        paddingRight: 58,
+        textAlign: 'center',
         fontFamily: "Lobster-Regular",
     },  
     inputView: {
