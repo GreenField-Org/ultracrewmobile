@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Button, Text, ScrollView, View, Pressable } from 'react-native';
+import { StyleSheet, Button, Text, ScrollView, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import CountrySelect from '../Components/FormComponents/CountryPicker';
 import { useFonts } from "expo-font";
@@ -13,9 +13,16 @@ export default function CreateAcct({navigation}) {
 
     if (fontsLoaded) {
         return (
-            <ScrollView style={styles.form}>
+            <View stytle={styles.container}>
+            <ScrollView style={styles.form}
+            contentContainerStyle={{
+                flexGrow: 1,
+                justifyContent: 'center',
+                flexDirection: 'column',
+              }}
+            >
                 <Text style={styles.titleText}>Create an Account</Text>
-                <Input 
+                <Input style={styles.inputView}
                     placeholder='Username'
                 />
                 <Input
@@ -56,6 +63,7 @@ export default function CreateAcct({navigation}) {
                     <Text style={styles.text}>Create Account</Text>
                 </Pressable>
           </ScrollView>
+        </View>
           
 
         )
