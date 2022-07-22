@@ -35,7 +35,9 @@ export default function CreateAcct({navigation}) {
                     placeholder='Weight'
                     type = 'numeric'
                 />
-                <CountrySelect/>
+                <Input 
+                placeholder='Country'
+                />
                 <Input 
                     placeholder='Street address'
                 />
