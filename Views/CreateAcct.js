@@ -13,13 +13,7 @@ export default function CreateAcct({navigation}) {
 
     if (fontsLoaded) {
         return (
-            <View stytle={styles.container}>
-            <ScrollView style={styles.form}
-            contentContainerStyle={{
-                flexGrow: 1,
-                justifyContent: 'center',
-                flexDirection: 'column',
-              }}
+            <View style={styles.container}
             >
                 <Text style={styles.titleText}>Create an Account</Text>
                 <Input style={styles.inputView}
@@ -62,10 +56,7 @@ export default function CreateAcct({navigation}) {
                 >
                     <Text style={styles.text}>Create Account</Text>
                 </Pressable>
-          </ScrollView>
-        </View>
-          
-
+          </View>
         )
     } else {
         return <View /> 
@@ -74,14 +65,13 @@ export default function CreateAcct({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#F8CD82',
         alignItems: 'center',
         justifyContent: 'center',
+        flex: 1,
     },
     titleText: { 
         fontSize: 25,
-        backgroundColor: 'orange',
         textAlign: 'center',
         fontFamily: "Lobster-Regular",
     },  
@@ -110,9 +100,6 @@ const styles = StyleSheet.create({
         height: 45,
         marginBottom: 20,
         alignItems: "center",
-    },
-    form: {
-        backgroundColor: '#F8CD82',
     },
     submitButton: {
         width: "80%",
