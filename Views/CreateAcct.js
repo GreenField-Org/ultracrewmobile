@@ -1,7 +1,6 @@
 import React from 'react'
-import { StyleSheet, Button, Text, ScrollView, View, Pressable,} from 'react-native';
+import { StyleSheet, Text, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
-import CountrySelect from '../Components/FormComponents/CountryPicker';
 import { useFonts } from "expo-font";
 
 const customFont = {
