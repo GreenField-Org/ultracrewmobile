@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Button, Pressable } from 'react-native';
+import { Pressable } from 'react-native';
 
 
 /*  This should be moved into the View folder once all page creations are merged back into main */
