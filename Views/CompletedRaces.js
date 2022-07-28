@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, FlatList, Pressable } from 'react-native';
 import { useFonts } from "expo-font";
 
 const customFont = {
@@ -13,8 +13,23 @@ export default function CompletedRaces() {
 
     if (fontsLoaded) {
         return (
-            <View>
+            <View style={styles.container}>
                 <Text style={styles.titleText}>Completed Races</Text>
+                <FlatList
+                data={[
+                  {key: 'Devin'},
+                  {key: 'Dan'},
+                  {key: 'Dominic'},
+                  {key: 'Jackson'},
+                  {key: 'James'},
+                  {key: 'Joel'},
+                  {key: 'John'},
+                  {key: 'Jillian'},
+                  {key: 'Jimmy'},
+                  {key: 'Julie'},
+                ]}
+                renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+              />
             </View>
         )
     } else {
@@ -23,11 +38,15 @@ export default function CompletedRaces() {
 }
 
 const styles = StyleSheet.create({
-    titleText: { 
-        fontSize: 25,
-        backgroundColor: 'orange',
-        paddingLeft: 58,
-        paddingRight: 58,
+    titleText: {
+        fontSize: 40,
+        marginBottom: 50,
         fontFamily: "Lobster-Regular",
-    }, 
+    },
+    container: {
+        backgroundColor: '#F8CD82',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+    },
 })
