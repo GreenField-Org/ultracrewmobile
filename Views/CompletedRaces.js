@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, FlatList, Pressable } from 'react-native';
+import { StyleSheet, Text, Pressable, View } from 'react-native';
 import { useFonts } from "expo-font";
 
 const customFont = {
@@ -8,28 +8,23 @@ const customFont = {
 
 /* this should be moved to the Views folder ones all pages have been merged to main */
 
-export default function CompletedRaces() {
+export default function CompletedRaces({navigation}) {
     const [fontsLoaded] = useFonts(customFont);
+    const raceList = [{
+        raceName: 'Anchor Down'},
+        {raceName: 'Bear Chase'},
+        {raceName: 'GD Lemondrop'},
+        {raceName:'Backyard Ultra'},
+        {raceName: '666'},
+        {raceName: 'Hamsterwheel'},
+        {raceName: 'Ethan Allan'}
+        ]
 
     if (fontsLoaded) {
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>Completed Races</Text>
-                <FlatList
-                data={[
-                  {key: 'Devin'},
-                  {key: 'Dan'},
-                  {key: 'Dominic'},
-                  {key: 'Jackson'},
-                  {key: 'James'},
-                  {key: 'Joel'},
-                  {key: 'John'},
-                  {key: 'Jillian'},
-                  {key: 'Jimmy'},
-                  {key: 'Julie'},
-                ]}
-                renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
-              />
+                {raceList.map(race =><Pressable onPress={() => navigation.navigate('MyRaces')}><Text>{race.raceName}</Text></Pressable>)}
             </View>
         )
     } else {
