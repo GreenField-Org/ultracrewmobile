@@ -1,7 +1,6 @@
 import React from 'react'
-import { StyleSheet, Button, Text, ScrollView, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
-import CountrySelect from '../Components/FormComponents/CountryPicker';
 import { useFonts } from "expo-font";
 
 const customFont = {
@@ -13,9 +12,10 @@ export default function CreateAcct({navigation}) {
 
     if (fontsLoaded) {
         return (
-            <ScrollView style={styles.form}>
+            <View style={styles.container}
+            >
                 <Text style={styles.titleText}>Create an Account</Text>
-                <Input 
+                <Input style={styles.inputView}
                     placeholder='Username'
                 />
                 <Input
@@ -34,7 +34,9 @@ export default function CreateAcct({navigation}) {
                     placeholder='Weight'
                     type = 'numeric'
                 />
-                <CountrySelect/>
+                <Input 
+                placeholder='Country'
+                />
                 <Input 
                     placeholder='Street address'
                 />
@@ -48,10 +50,14 @@ export default function CreateAcct({navigation}) {
                     placeholder='User Tier'
                 />
 
-          <Button title='Create Account' onPress={() => navigation.navigate('Home')}/>
-          </ScrollView>
-          
-
+                <Pressable
+                title="Create Account"
+                style={styles.submitButton}
+                onPress={() => navigation.navigate("Home")}
+                >
+                    <Text style={styles.text}>Create Account</Text>
+                </Pressable>
+          </View>
         )
     } else {
         return <View /> 
@@ -60,16 +66,14 @@ export default function CreateAcct({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#F8CD82',
         alignItems: 'center',
         justifyContent: 'center',
+        flex: 1,
     },
     titleText: { 
         fontSize: 25,
-        backgroundColor: 'orange',
-        paddingLeft: 58,
-        paddingRight: 58,
+        textAlign: 'center',
         fontFamily: "Lobster-Regular",
     },  
     inputView: {
@@ -99,13 +103,14 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     submitButton: {
-        width:"80%",
-        borderRadius:10,
-        height:50,
+        width: "80%",
+        borderRadius: 10,
+        marginBottom: 35,
+        height: 50,
         fontSize: 20,
-        marginTop: 10,
-        alignItems:"center",
-        justifyContent:"center",
-        backgroundColor:"orange",
-    }
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#0DF7DB",
+        fontWeight: 700,
+    },
 })
