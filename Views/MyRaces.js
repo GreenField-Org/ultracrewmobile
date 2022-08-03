@@ -22,8 +22,8 @@ export default function MyRaces({navigation}) {
                 </Pressable>
                 <Pressable 
                     style={styles.button}
-                    title='Current Race'
-                    onPress={() => navigation.navigate('CurrentRace')}
+                    title='Active Races'
+                    onPress={() => navigation.navigate('ActiveRaces')}
                 >
                     <Text style={styles.text}>Active Races</Text>
                 </Pressable>

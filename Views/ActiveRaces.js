@@ -6,9 +6,9 @@ const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
 };
 
-/* this should be moved to the Views folder ones all pages have been merged to main */
+/* this is for the current race in progress */
 
-export default function CompletedRaces({navigation}) {
+export default function ActiveRaces({navigation}) {
     const [fontsLoaded] = useFonts(customFont);
     const raceList = [{
         raceName: 'Anchor Down'},
@@ -23,8 +23,8 @@ export default function CompletedRaces({navigation}) {
     if (fontsLoaded) {
         return (
             <View style={styles.container}>
-                <Text style={styles.titleText}>Completed Races</Text>
-                {raceList.map(race =><Pressable onPress={() => navigation.navigate('CompletedRaceStats')}><Text>{race.raceName}</Text></Pressable>)}
+                <Text style={styles.titleText}>Active Races</Text>
+                {raceList.map(race =><Pressable onPress={() => navigation.navigate('ActiveRaceStats')}><Text>{race.raceName}</Text></Pressable>)}
             </View>
         )
     } else {
