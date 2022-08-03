@@ -33,6 +33,7 @@ export default function App({navigation}) {
           <Stack.Screen name="CompletedRaces" component={CompletedRaces} options={{ title: 'Completed Races'}} />
           <Stack.Screen name="ProfilePage" component={ProfilePage} options={{ title: 'My Profile'}} />
           <Stack.Screen name="AidStation" component={AidStation} options={{ title: 'Aid Station'}} />
+          <Stack.Screen name="CompletedRaceStats" component={CompletedRaceStats} options={{ title: 'Completed Race Stats'}} />
         </Stack.Navigator>
       </NavigationContainer>
     </RootSiblingParent>

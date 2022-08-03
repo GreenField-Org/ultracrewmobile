@@ -24,7 +24,7 @@ export default function CompletedRaces({navigation}) {
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>Completed Races</Text>
-                {raceList.map(race =><Pressable onPress={() => navigation.navigate('MyRaces')}><Text>{race.raceName}</Text></Pressable>)}
+                {raceList.map(race =><Pressable onPress={() => navigation.navigate('CompletedRaceStats')}><Text>{race.raceName}</Text></Pressable>)}
             </View>
         )
     } else {
