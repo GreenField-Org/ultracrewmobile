@@ -15,6 +15,7 @@ import CreateRace from './Views/CreateRace';
 import CreateAid from './Views/CreateAid';
 import CompletedRaceStats from './Views/CompletedRaceStats';
 import { RootSiblingParent } from 'react-native-root-siblings';
+import ActiveRaceStats from './Views/ActiveRaceStats';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ export default function App({navigation}) {
           <Stack.Screen name="ProfilePage" component={ProfilePage} options={{ title: 'My Profile'}} />
           <Stack.Screen name="AidStation" component={AidStation} options={{ title: 'Aid Station'}} />
           <Stack.Screen name="CompletedRaceStats" component={CompletedRaceStats} options={{ title: 'Completed Race Stats'}} />
+          <Stack.Screen name="ActiveRaceStats" component={ActiveRaceStats} options={{ title: 'Active Race Stats'}} />
         </Stack.Navigator>
       </NavigationContainer>
     </RootSiblingParent>
