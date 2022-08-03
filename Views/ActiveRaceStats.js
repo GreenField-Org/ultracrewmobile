@@ -6,7 +6,7 @@ const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
 };
 
-export default function CompletedRaceStats() {
+export default function ActiveRaceStats() {
     let [fontsLoaded] = useFonts(customFont);
 
     if (fontsLoaded) {
