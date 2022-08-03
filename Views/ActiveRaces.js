@@ -8,7 +8,7 @@ const customFont = {
 
 /* this is for the current race in progress */
 
-export default function ActiveRaces({ name }) {
+export default function ActiveRaces({navigation}) {
     const [fontsLoaded] = useFonts(customFont);
     const raceList = [{
         raceName: 'Anchor Down'},
@@ -24,7 +24,7 @@ export default function ActiveRaces({ name }) {
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>Active Races</Text>
-                {raceList.map(race =><Pressable onPress={() => navigation.navigate('MyRaces')}><Text>{race.raceName}</Text></Pressable>)}
+                {raceList.map(race =><Pressable onPress={() => navigation.navigate('ActiveRaceStats')}><Text>{race.raceName}</Text></Pressable>)}
             </View>
         )
     } else {
