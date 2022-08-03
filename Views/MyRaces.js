@@ -25,14 +25,14 @@ export default function MyRaces({navigation}) {
                     title='Current Race'
                     onPress={() => navigation.navigate('CurrentRace')}
                 >
-                    <Text style={styles.text}>Current Race</Text>
+                    <Text style={styles.text}>Active Races</Text>
                 </Pressable>
                 <Pressable 
                     style={styles.button}
                     title='Completed Races'
                     onPress={() => navigation.navigate('CompletedRaces')}
                 >
-                    <Text style={styles.text}>Races Finished</Text>
+                    <Text style={styles.textCompletedRaces}>Completed Races</Text>
                 </Pressable>
             </View>
         )
@@ -62,6 +62,11 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    textCompletedRaces: {
+        fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'center'
     },
