@@ -26,20 +26,20 @@ export default function CompletedRaceStats() {
                 <Text style={styles.titleText}>{completedRace.name}</Text>
                 <Grid>
                     <Col>
-                        <Row><Text>Date</Text></Row>
-                        <Row><Text>Total Time</Text></Row>
-                        <Row><Text>Average Pace</Text></Row>
-                        <Row><Text>Distance Run</Text></Row>
-                        <Row><Text>Calories Consumed</Text></Row>
-                        <Row><Text>Calories Burned</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>Date</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>Total Time</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>Average Pace</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>Distance Run</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>Calories Consumed</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>Calories Burned</Text></Row>
                     </Col>
                     <Col>
-                        <Row><Text>{completedRace.date}</Text></Row>
-                        <Row><Text>{completedRace.totalTime}</Text></Row>
-                        <Row><Text>{completedRace.averagePace}</Text></Row>
-                        <Row><Text>{completedRace.distanceRan} miles</Text></Row>
-                        <Row><Text>{completedRace.calConsume} calories</Text></Row>
-                        <Row><Text>{completedRace.calBurned} calories</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>{completedRace.date}</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>{completedRace.totalTime}</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>{completedRace.averagePace}</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>{completedRace.distanceRan} miles</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>{completedRace.calConsume} calories</Text></Row>
+                        <Row style={styles.row}><Text style={styles.colText}>{completedRace.calBurned} calories</Text></Row>
                     </Col>
 </Grid>
             </View>
@@ -61,4 +61,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flex: 1,
     },
+    colText: {
+        fontSize: 20
+    },
+    row: {
+        borderBottomWidth: 1,
+        borderBottomColor: 'black'
+    }
 })
