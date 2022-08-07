@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
+import PhoneInput from 'react-native-phone-input';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -10,6 +11,7 @@ const customFont = {
 export default function CreateAcct({navigation}) {
   const [fontsLoaded] = useFonts(customFont);
   const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [emailError, setEmailError] = useState(null);
 
   const handleSumbit = () => {
@@ -26,7 +28,7 @@ export default function CreateAcct({navigation}) {
 
     if (fontsLoaded) {
         return (
-            <ScrollView style={styles.container}
+            <View style={styles.container}
             >
                 <Text style={styles.titleText}>Create an Account</Text>
                 <Input style={styles.inputView}
@@ -63,8 +65,14 @@ export default function CreateAcct({navigation}) {
                     value={email}
                 />
                 {emailError && <Text style={styles.error}>{emailError}</Text>}
-                <Input 
-                    placeholder='Telephone Number'
+                <PhoneInput
+                    style={styles.phoneInputView}
+                    initialValue={phoneNumber}
+                    onChangeText={text => setPhoneNumber(text)}
+                    initialCountry="us"
+                    textProps={{
+                        placeholder: 'Phone Number'
+                    }}
                 />
                 <Input 
                     placeholder='User Tier'
@@ -77,7 +85,7 @@ export default function CreateAcct({navigation}) {
                 >
                     <Text style={styles.text}>Create Account</Text>
                 </Pressable>
-          </ScrollView>
+          </View>
         )
     } else {
         return <View /> 
@@ -124,6 +132,14 @@ const styles = StyleSheet.create({
         height: 45,
         marginBottom: 20,
         alignItems: "center",
+    },
+    phoneInputView: {
+        backgroundColor: "lightgray",
+        borderRadius: 5,
+        width: "85%",
+        height: 45,
+        alignItems: "center",
+        paddingLeft: 10
     },
     submitButton: {
         width: "80%",
