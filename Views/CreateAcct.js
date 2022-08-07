@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
@@ -9,10 +9,24 @@ const customFont = {
 
 export default function CreateAcct({navigation}) {
   const [fontsLoaded] = useFonts(customFont);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(null);
+
+  const handleSumbit = () => {
+
+    if(!/\S+@\S+\.\S+/.test(email)) {
+        setEmailError('Invalid Email');
+        return;
+    } else { 
+        setEmailError(null);
+    }
+
+    navigation.navigate("Home");
+  }
 
     if (fontsLoaded) {
         return (
-            <View style={styles.container}
+            <ScrollView style={styles.container}
             >
                 <Text style={styles.titleText}>Create an Account</Text>
                 <Input style={styles.inputView}
@@ -41,8 +55,14 @@ export default function CreateAcct({navigation}) {
                     placeholder='Street address'
                 />
                 <Input 
+                    type='email-address'
                     placeholder='Email'
+                    autoCapitalize="none"
+                    autoComplete={false}
+                    onChange={text => setEmail(text)}
+                    value={email}
                 />
+                {emailError && <Text style={styles.error}>{emailError}</Text>}
                 <Input 
                     placeholder='Telephone Number'
                 />
@@ -53,11 +73,11 @@ export default function CreateAcct({navigation}) {
                 <Pressable
                 title="Create Account"
                 style={styles.submitButton}
-                onPress={() => navigation.navigate("Home")}
+                onPress={handleSumbit}
                 >
                     <Text style={styles.text}>Create Account</Text>
                 </Pressable>
-          </View>
+          </ScrollView>
         )
     } else {
         return <View /> 
@@ -70,6 +90,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
+    },
+    error: {
+        color: 'rgb(255,0,0)',
     },
     titleText: { 
         fontSize: 25,
