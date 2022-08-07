@@ -1087,9 +1087,9 @@
     "minimist" "^1.2.0"
 
 "@expo-google-fonts/lobster@^0.2.0":
-  "integrity" "sha512-WAbvBMdirEfvNgSbSb9ANkwpm27mvPfYpdB/rW/0sjC2RvXqnO0fH9pB/FivwpvmtNimfNIOWy8qQPfZBE9MHw=="
-  "resolved" "https://registry.npmjs.org/@expo-google-fonts/lobster/-/lobster-0.2.0.tgz"
-  "version" "0.2.0"
+  "integrity" "sha512-1GYR9pxBUkPCejijESrqSYC0GYLz+kW7hZQDDJ0L7g3P+ghHmYidE9NVqdiUbB6fWJKIgkVIXqFz0ZXIagCkBA=="
+  "resolved" "https://registry.npmjs.org/@expo-google-fonts/lobster/-/lobster-0.2.2.tgz"
+  "version" "0.2.2"
 
 "@expo/bunyan@^4.0.0", "@expo/bunyan@4.0.0":
   "integrity" "sha512-Ydf4LidRB/EBI+YrB+cVLqIseiRfjUI/AeHBgjGMtq3GroraDu81OV7zqophRgupngoL3iS3JUMDMnxO7g39qA=="
@@ -6006,9 +6006,9 @@
     "thenify-all" "^1.0.0"
 
 "nanoid@^3.1.23":
-  "integrity" "sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ=="
-  "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.1.30.tgz"
-  "version" "3.1.30"
+  "integrity" "sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw=="
+  "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
+  "version" "3.3.4"
 
 "nanomatch@^1.2.9":
   "integrity" "sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA=="

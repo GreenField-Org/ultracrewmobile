@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
 import PhoneInput from 'react-native-phone-input';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -10,9 +11,27 @@ const customFont = {
 
 export default function CreateAcct({navigation}) {
   const [fontsLoaded] = useFonts(customFont);
+  const [date, setDate] = useState(new Date());
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emailError, setEmailError] = useState(null);
+
+  const onDateChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setDate(currentDate);
+  };
+
+  const showMode = (currentMode) => {
+    if (Platform.OS === 'android') {
+      setShow(false);
+      // for iOS, add a button that closes the picker
+    }
+
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
 
   const handleSumbit = () => {
 
@@ -43,8 +62,15 @@ export default function CreateAcct({navigation}) {
                 <Input 
                     placeholder='Last Name'
                 />
-                <Input 
-                    placeholder='Date of birth'
+                <Text>Date of Birth:  </Text>
+                <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={'date'}
+                    is24Hour={true}
+                    onChange={onDateChange}
+                    display="calendar"
+                    style={{width: "100%", marginRight: 300, marginTop: -80}}
                 />
                 <Input 
                     placeholder='Weight'
