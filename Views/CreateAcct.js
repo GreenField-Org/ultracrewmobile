@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
+import PhoneInput from 'react-native-phone-input';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -9,6 +11,39 @@ const customFont = {
 
 export default function CreateAcct({navigation}) {
   const [fontsLoaded] = useFonts(customFont);
+  const [date, setDate] = useState(new Date());
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [emailError, setEmailError] = useState(null);
+
+  const onDateChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setDate(currentDate);
+  };
+
+  const showMode = (currentMode) => {
+    if (Platform.OS === 'android') {
+      setShow(false);
+      // for iOS, add a button that closes the picker
+    }
+
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
+  const handleSumbit = () => {
+
+    if(!/\S+@\S+\.\S+/.test(email)) {
+        setEmailError('Invalid Email');
+        return;
+    } else { 
+        setEmailError(null);
+    }
+
+    navigation.navigate("Home");
+  }
 
     if (fontsLoaded) {
         return (
@@ -27,8 +62,15 @@ export default function CreateAcct({navigation}) {
                 <Input 
                     placeholder='Last Name'
                 />
-                <Input 
-                    placeholder='Date of birth'
+                <Text>Date of Birth:  </Text>
+                <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={'date'}
+                    is24Hour={true}
+                    onChange={onDateChange}
+                    display="calendar"
+                    style={{width: "100%", marginRight: 300, marginTop: -80}}
                 />
                 <Input 
                     placeholder='Weight'
@@ -41,10 +83,22 @@ export default function CreateAcct({navigation}) {
                     placeholder='Street address'
                 />
                 <Input 
+                    type='email-address'
                     placeholder='Email'
+                    autoCapitalize="none"
+                    autoComplete={false}
+                    onChange={text => setEmail(text)}
+                    value={email}
                 />
-                <Input 
-                    placeholder='Telephone Number'
+                {emailError && <Text style={styles.error}>{emailError}</Text>}
+                <PhoneInput
+                    style={styles.phoneInputView}
+                    initialValue={phoneNumber}
+                    onChangeText={text => setPhoneNumber(text)}
+                    initialCountry="us"
+                    textProps={{
+                        placeholder: 'Phone Number'
+                    }}
                 />
                 <Input 
                     placeholder='User Tier'
@@ -53,7 +107,7 @@ export default function CreateAcct({navigation}) {
                 <Pressable
                 title="Create Account"
                 style={styles.submitButton}
-                onPress={() => navigation.navigate("Home")}
+                onPress={handleSumbit}
                 >
                     <Text style={styles.text}>Create Account</Text>
                 </Pressable>
@@ -70,6 +124,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
+    },
+    error: {
+        color: 'rgb(255,0,0)',
     },
     titleText: { 
         fontSize: 25,
@@ -101,6 +158,14 @@ const styles = StyleSheet.create({
         height: 45,
         marginBottom: 20,
         alignItems: "center",
+    },
+    phoneInputView: {
+        backgroundColor: "lightgray",
+        borderRadius: 5,
+        width: "85%",
+        height: 45,
+        alignItems: "center",
+        paddingLeft: 10
     },
     submitButton: {
         width: "80%",
