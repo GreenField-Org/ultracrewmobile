@@ -15,14 +15,23 @@ export default function CreateAid({navigation}) {
         return (
             <View style={styles.container}>
                   <Text style={styles.titleText}>Create an Aid Station</Text>
-                  <Input 
-                      placeholder='Aid Station Name'
-                  />
                   <Input
                       placeholder='Distance Point'
                       type = 'numeric'
                   />
-                  <Pressable style={styles.submitButton}><Text>Create Aid Station</Text>
+                  <Input 
+                    placeholder='Foods consumed'
+                  />
+                  <Input 
+                    placeholder='Liquids consumed'
+                  />
+                  <Input
+                    placeholder='Mood'
+                  />
+                  <Input
+                    placeholder='Notes'
+                  />
+                  <Pressable style={styles.submitButton}><Text>Add Station</Text>
                   </Pressable>
             </View>
         )
