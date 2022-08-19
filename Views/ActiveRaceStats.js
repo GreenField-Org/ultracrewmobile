@@ -8,11 +8,34 @@ const customFont = {
 
 export default function ActiveRaceStats() {
     let [fontsLoaded] = useFonts(customFont);
+    const raceData = {
+        raceName: 'Anchor Down Ultra',
+        aidStation: [{
+            stationNum: 1,
+            timeSpent: '1234'},
+            {stationNum: 2,
+            timeSpent: '5678'},
+            {stationNum: 3,
+            timeSpent: '9101'},
+            {stationNum: 4,
+            timeSpent: '1213'}
+        ]
+    }
+
 
     if (fontsLoaded) {
         return (
-            <View>
-                <Text>Active race stats will go here</Text>
+            <View style={styles.container}>
+                <Text style={styles.titleText}>{raceData.raceName}</Text>
+                <View style={styles.dataContainer}>
+                    <View style={styles.stationNumCont}>
+                        <Text>Station Num Here</Text>
+                    </View>
+                    <View style={styles.stationTimeCont}>
+                        <Text> 10:01</Text>
+                    </View>
+                </View>
+
             </View>
         )   
     } else {
@@ -26,4 +49,19 @@ const styles = StyleSheet.create({
         marginBottom: 50,
         fontFamily: 'Lobster-Regular',
     },
+    container: {
+        backgroundColor: '#F8CD82',
+        alignItems: 'center',
+        flex: 1,
+    },
+    dataContainer: {
+        flexDirection: 'row'
+    },
+    stationNumCont: {
+        width: 50
+    },
+    stationTimeCont :{
+        width: 50
+    }
+    
 })
