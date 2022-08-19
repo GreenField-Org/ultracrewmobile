@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
@@ -8,8 +8,8 @@ const customFont = {
 };
 
 export default function CreateAid({navigation}) {
-    const raceList = ['race one', 'race two', 'race three'];
     const [fontsLoaded] = useFonts(customFont);
+    const [time, setTime] = useState('');
 
     function getTime(){
         return new Date().toLocaleString()
@@ -20,7 +20,7 @@ export default function CreateAid({navigation}) {
             <View style={styles.container}>
                   <Text style={styles.titleText}>Create an Aid Station</Text>
                   <Pressable style={styles.submitButton}
-                    onPress={getTime}>
+                    onPress={setTime(new Date().toLocaleString)}>
                         <Text>Entered Aid</Text>
                   </Pressable>
                   <Input
@@ -28,8 +28,11 @@ export default function CreateAid({navigation}) {
                       type = 'numeric'
                   />
                   <Input
-                  placeholder='Time entered aid'
-                  />
+                  placeholder='Time entered aid'>
+                    <Text>
+                        {time}
+                    </Text>
+                  </Input>
                   <Input 
                     placeholder='Foods consumed'
                   />
