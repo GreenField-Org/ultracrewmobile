@@ -11,13 +11,24 @@ export default function CreateAid({navigation}) {
     const raceList = ['race one', 'race two', 'race three'];
     const [fontsLoaded] = useFonts(customFont);
 
+    function getTime(){
+        return new Date().toLocaleString()
+    }
+
     if (fontsLoaded) {
         return (
             <View style={styles.container}>
                   <Text style={styles.titleText}>Create an Aid Station</Text>
+                  <Pressable style={styles.submitButton}
+                    onPress={getTime}>
+                        <Text>Entered Aid</Text>
+                  </Pressable>
                   <Input
                       placeholder='Distance Point'
                       type = 'numeric'
+                  />
+                  <Input
+                  placeholder='Time entered aid'
                   />
                   <Input 
                     placeholder='Foods consumed'
@@ -31,6 +42,10 @@ export default function CreateAid({navigation}) {
                   <Input
                     placeholder='Notes'
                   />
+                  <Input
+                  placeholder='Time out of aid'
+                  />
+                  
                   <Pressable style={styles.submitButton}><Text>Add Station</Text>
                   </Pressable>
             </View>
