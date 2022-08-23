@@ -29,7 +29,9 @@ export default function ActiveRaceStats() {
                 <Text style={styles.titleText}>{raceData.raceName}</Text>
                 <View style={styles.dataContainer}>
                     <View style={styles.stationNumCont}>
-                        <Text>Station Num Here</Text>
+                        {raceData.aidStation.map(station =>{
+                            return <Text>{station.stationNumber}</Text>})}
+                        <Text>Station Number</Text>
                     </View>
                     <View style={styles.stationTimeCont}>
                         <Text> 10:01</Text>
