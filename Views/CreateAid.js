@@ -9,10 +9,10 @@ const customFont = {
 
 export default function CreateAid({navigation}) {
     const [fontsLoaded] = useFonts(customFont);
-    const [time, setTime] = useState('');
+    const [time, setTime] = useState(new Date().toLocaleString());
 
-    function getTime(){
-        return new Date().toLocaleString()
+    function timeEntered(){
+        setTime(new Date().toLocaleString())
     }
 
     if (fontsLoaded) {
@@ -20,7 +20,7 @@ export default function CreateAid({navigation}) {
             <View style={styles.container}>
                   <Text style={styles.titleText}>Create an Aid Station</Text>
                   <Pressable style={styles.submitButton}
-                    onPress={setTime(new Date().toLocaleString)}>
+                    onPress={timeEntered}>
                         <Text>Entered Aid</Text>
                   </Pressable>
                   <Input
@@ -28,9 +28,9 @@ export default function CreateAid({navigation}) {
                       type = 'numeric'
                   />
                   <Input
-                  placeholder='Time entered aid'>
+                  placeholder={time}>
                     <Text>
-                        {time}
+                    {time}
                     </Text>
                   </Input>
                   <Input 
