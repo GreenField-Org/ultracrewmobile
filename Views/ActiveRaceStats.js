@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from "expo-font";
+import { FlatList } from 'react-native-web';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -22,6 +23,9 @@ export default function ActiveRaceStats() {
         ]
     }
 
+    const renderStationNum = ({ item }) => (
+        <Text>{item.stationNum}</Text>
+      );
 
     if (fontsLoaded) {
         return (
@@ -29,12 +33,18 @@ export default function ActiveRaceStats() {
                 <Text style={styles.titleText}>{raceData.raceName}</Text>
                 <View style={styles.dataContainer}>
                     <View style={styles.stationNumCont}>
-                        {raceData.aidStation.map(station =>{
-                            return <Text>{station.stationNumber}</Text>})}
-                        <Text>Station Number</Text>
+                        {raceData.aidStation.map((station) => {
+                            return(
+                                <Text>{station.stationNum}</Text>
+                            )
+                        })}
                     </View>
                     <View style={styles.stationTimeCont}>
-                        <Text> 10:01</Text>
+                    {raceData.aidStation.map((station) => {
+                        return(
+                            <Text>{station.timeSpent}</Text>
+                        )
+                    })}
                     </View>
                 </View>
 
