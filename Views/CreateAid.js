@@ -22,7 +22,8 @@ export default function CreateAid({navigation}) {
                       placeholder='Distance Point'
                       type = 'numeric'
                   />
-                  <Pressable style={styles.submitButton}><Text>Create Aid Station</Text>
+                  <Pressable style={styles.submitButton}>
+                    <Text>Create Aid Station</Text>
                   </Pressable>
             </View>
         )

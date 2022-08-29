@@ -22,14 +22,16 @@ export default function ActiveRaceStats({navigation}) {
         ]
     }
 
-    const renderStationNum = ({ item }) => (
-        <Text>{item.stationNum}</Text>
-      );
-
     if (fontsLoaded) {
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>{raceData.raceName}</Text>
+                <Pressable 
+                    style={styles.submitButton}
+                    onPress={() => navigation.navigate('CreateAid')}
+                    >
+                        <Text>Add New Aid Station</Text>
+                </Pressable>
                 <View style={styles.dataContainer}>
                     <View style={styles.stationNumCont}>
                     <Text style={styles.headerText}>Station</Text>
@@ -82,6 +84,16 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontWeight: 'bold'
+    },
+    submitButton: {
+        width:"80%",
+        borderRadius:10,
+        height:50,
+        fontSize: 20,
+        marginBottom: 20,
+        alignItems:"center",
+        justifyContent:"center",
+        backgroundColor:"#0DF7DB",
     }
     
 })
