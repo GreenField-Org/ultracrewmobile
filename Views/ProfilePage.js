@@ -23,7 +23,12 @@ export default function ProfilePage({}) {
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>{profileInfo.name}</Text>
-                <Text>{profileInfo.age}</Text>
+                <Text style={styles.dataText}>{profileInfo.age}</Text>
+                <Text style={styles.dataText}>{profileInfo.location}</Text>
+                <Text style={styles.dataText}>{profileInfo.weight}</Text>
+                <Text style={styles.dataText}>{profileInfo.email}</Text>
+                <Text style={styles.dataText}>{profileInfo.telephoneNumber}</Text>
+                <Text style={styles.dataText}>{profileInfo.userTier}</Text>
             </View>
         )   
     } else {
@@ -34,7 +39,7 @@ export default function ProfilePage({}) {
 const styles = StyleSheet.create({
     titleText: {
         fontSize: 30,
-        marginBottom: 50,
+        marginBottom: 20,
         fontFamily: 'Lobster-Regular',
     },
     container: {
@@ -43,4 +48,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flex: 1,
     },
+    dataText:{
+        fontSize: 20,
+    }
 })
