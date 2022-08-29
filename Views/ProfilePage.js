@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { useFonts } from "expo-font";
 import EditPencil from '../Components/Images/EditPencil.png'
+import { TouchableOpacity } from 'react-native-web';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -30,7 +31,7 @@ export default function ProfilePage({}) {
                 <Text style={styles.dataText}>{profileInfo.email}</Text>
                 <Text style={styles.dataText}>{profileInfo.telephoneNumber}</Text>
                 <Text style={styles.dataText}>{profileInfo.userTier}</Text>
-                <Image source={EditPencil}/>
+                    <Image source={EditPencil}/>
             </View>
         )   
     } else {
