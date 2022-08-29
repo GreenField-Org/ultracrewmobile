@@ -6,24 +6,24 @@ const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
 };
 
-const profileInfo = [{
-    name: 'Hanna Littlefield'},
-    {age: 31},
-    {location: 'Taunton, MA'},
-    {weight: 138},
-    {email: 'hannamlittlefield@gmail.com'},
-    {telephoneNumber: '443-454-18613'},
-    {userTier: 3}
-]
+const profileInfo = {
+    name: 'Hanna Littlefield',
+    age: 31,
+    location: 'Taunton, MA',
+    weight: 138,
+    email: 'hannamlittlefield@gmail.com',
+    telephoneNumber: '443-454-18613',
+    userTier: 3
+    }
 
-export default function ProfilePage({navigation}) {
+export default function ProfilePage({}) {
     let [fontsLoaded] = useFonts(customFont);
 
     if (fontsLoaded) {
         return (
             <View style={styles.container}>
-                <Text style={styles.titleText}>Name</Text>
-                
+                <Text style={styles.titleText}>{profileInfo.name}</Text>
+                <Text>{profileInfo.age}</Text>
             </View>
         )   
     } else {
