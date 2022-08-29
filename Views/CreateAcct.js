@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Pressable,} from 'react-native';
+import { StyleSheet, Text, View, Pressable, ScrollView} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
 import PhoneInput from 'react-native-phone-input';
@@ -47,7 +47,7 @@ export default function CreateAcct({navigation}) {
 
     if (fontsLoaded) {
         return (
-            <View style={styles.container}
+            <ScrollView contentContainerStyle={styles.container}
             >
                 <Text style={styles.titleText}>Create an Account</Text>
                 <Input style={styles.inputView}
@@ -111,7 +111,7 @@ export default function CreateAcct({navigation}) {
                 >
                     <Text style={styles.text}>Create Account</Text>
                 </Pressable>
-          </View>
+          </ScrollView>
         )
     } else {
         return <View /> 
