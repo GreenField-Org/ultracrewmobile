@@ -33,6 +33,7 @@ export default function ActiveRaceStats() {
                 <Text style={styles.titleText}>{raceData.raceName}</Text>
                 <View style={styles.dataContainer}>
                     <View style={styles.stationNumCont}>
+                    <Text style={styles.headerText}>Station</Text>
                         {raceData.aidStation.map((station) => {
                             return(
                                 <Text>{station.stationNum}</Text>
@@ -40,6 +41,7 @@ export default function ActiveRaceStats() {
                         })}
                     </View>
                     <View style={styles.stationTimeCont}>
+                    <Text style={styles.headerText}>Time Spent</Text>
                     {raceData.aidStation.map((station) => {
                         return(
                             <Text>{station.timeSpent}</Text>
@@ -70,10 +72,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     stationNumCont: {
-        width: 50
+        width: 100,
+        alignItems: 'center'
     },
     stationTimeCont :{
-        width: 50
+        width: 100,
+        alignItems: 'center',
+    },
+    headerText: {
+        fontWeight: 'bold'
     }
     
 })
