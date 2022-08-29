@@ -1,13 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable  } from 'react-native';
 import { useFonts } from "expo-font";
-import { FlatList } from 'react-native-web';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
 };
 
-export default function ActiveRaceStats() {
+export default function ActiveRaceStats({navigation}) {
     let [fontsLoaded] = useFonts(customFont);
     const raceData = {
         raceName: 'Anchor Down Ultra',
@@ -36,7 +35,9 @@ export default function ActiveRaceStats() {
                     <Text style={styles.headerText}>Station</Text>
                         {raceData.aidStation.map((station) => {
                             return(
-                                <Text>{station.stationNum}</Text>
+                                <Pressable onPress={() => navigation.navigate('AidStation')}>
+                                    <Text>{station.stationNum}</Text>
+                                </Pressable>
                             )
                         })}
                     </View>
