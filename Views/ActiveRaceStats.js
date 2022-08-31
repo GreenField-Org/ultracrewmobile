@@ -49,7 +49,7 @@ export default function ActiveRaceStats({navigation}) {
                     <Text style={styles.headerText}>Time Spent</Text>
                     {raceData.aidStation.map((station) => {
                         return(
-                            <Text>{station.timeSpent}</Text>
+                            <Text key={station.id}>{station.timeSpent}</Text>
                         )
                     })}
                     </View>
