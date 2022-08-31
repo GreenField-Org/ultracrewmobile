@@ -126,12 +126,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        paddingTop: 150,
-        paddingBottom: 150
+        paddingTop: 400,
+        paddingBottom: 400
     },
     scrollview: {
         backgroundColor: '#F8CD82',
-        marginHorizontal: 20,
     },
     error: {
         color: 'rgb(255,0,0)',
