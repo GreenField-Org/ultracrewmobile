@@ -37,7 +37,9 @@ export default function ActiveRaceStats({navigation}) {
                     <Text style={styles.headerText}>Station</Text>
                         {raceData.aidStation.map((station) => {
                             return(
-                                <Pressable onPress={() => navigation.navigate('AidStation')}>
+                                <Pressable 
+                                    onPress={() => navigation.navigate('AidStation')}
+                                    key={station.id}>
                                     <Text>{station.stationNum}</Text>
                                 </Pressable>
                             )
