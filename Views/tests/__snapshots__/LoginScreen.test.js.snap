@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login Screen  1`] = `<View />`;
+
+exports[`Login Screen renders LoginScreen component 1`] = `<View />`;

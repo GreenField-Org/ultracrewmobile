@@ -3,7 +3,7 @@ import renderer, {act} from 'react-test-renderer'
 
 
 describe('Login Screen', () =>{
-    it('', ()=>{
+    it('renders LoginScreen component', ()=>{
         expect(renderer.create(<LoginScreen/>)).toMatchSnapshot()
     })
 })
