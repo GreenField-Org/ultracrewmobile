@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
@@ -8,21 +8,48 @@ const customFont = {
 };
 
 export default function CreateAid({navigation}) {
-    const raceList = ['race one', 'race two', 'race three'];
     const [fontsLoaded] = useFonts(customFont);
+    const [time, setTime] = useState(new Date().toLocaleString());
+
+    function timeEntered(){
+        setTime(new Date().toLocaleString())
+    }
 
     if (fontsLoaded) {
         return (
             <View style={styles.container}>
                   <Text style={styles.titleText}>Create an Aid Station</Text>
-                  <Input 
-                      placeholder='Aid Station Name'
-                  />
+                  <Pressable style={styles.submitButton}
+                    onPress={timeEntered}>
+                        <Text>Entered Aid</Text>
+                  </Pressable>
                   <Input
                       placeholder='Distance Point'
                       type = 'numeric'
                   />
-                  <Pressable style={styles.submitButton}><Text>Create Aid Station</Text>
+                  <Input
+                  placeholder={time}>
+                    <Text>
+                    {time}
+                    </Text>
+                  </Input>
+                  <Input 
+                    placeholder='Foods consumed'
+                  />
+                  <Input 
+                    placeholder='Liquids consumed'
+                  />
+                  <Input
+                    placeholder='Mood'
+                  />
+                  <Input
+                    placeholder='Notes'
+                  />
+                  <Input
+                  placeholder='Time out of aid'
+                  />
+                  
+                  <Pressable style={styles.submitButton}><Text>Add Station</Text>
                   </Pressable>
             </View>
         )
