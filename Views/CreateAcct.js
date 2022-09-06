@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Pressable,} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
 import PhoneInput from 'react-native-phone-input';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import SelectDropdown from 'react-native-select-dropdown';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -15,6 +16,18 @@ export default function CreateAcct({navigation}) {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emailError, setEmailError] = useState(null);
+  const [countries, setCountries] = useState([])
+  const [country, setCountry] = useState('')
+
+  //fetch countries returns an array of objects use {name:{common}} to list
+  useEffect(() => {
+    fetch('https://restcountries.com/v3.1/all', {credentials: 'omit'})
+        .then(response => response.json())
+        .then(data => setCountries(data.map(country => {
+            return country.name.official
+        })))
+        .catch(error => console.error('Error: ', error))
+  }, [])
 
   const onDateChange = (event, selectedDate) => {
     const currentDate = selectedDate;
@@ -76,8 +89,19 @@ export default function CreateAcct({navigation}) {
                     placeholder='Weight'
                     type = 'numeric'
                 />
-                <Input 
-                placeholder='Country'
+                <SelectDropdown 
+                    buttonStyle={styles.ButtonInput}
+                    data={countries.sort()}
+                    onSelect={selectedItem => {
+                        setCountry(selectedItem)
+                    }}
+                    buttonTextAfterSelection={selectedItem => {
+                        return selectedItem;
+                    }}
+                    rowTextForSelection={item => {
+                        return item;
+                    }}
+                    defaultButtonText={'Country'}
                 />
                 <Input 
                     placeholder='Street address'
@@ -148,6 +172,11 @@ const styles = StyleSheet.create({
         marginTop: 5,
         padding: 5,
         marginLeft: 20,
+        backgroundColor: 'lightgray',
+        borderRadius: 10
+    },
+    ButtonInput: {
+        width: '85%',
         backgroundColor: 'lightgray',
         borderRadius: 10
     },
