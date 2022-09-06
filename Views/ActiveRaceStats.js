@@ -1,12 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View, Pressable  } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { useFonts } from "expo-font";
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
 };
 
-export default function ActiveRaceStats({navigation}) {
+export default function ActiveRaceStats({ navigation }) {
     let [fontsLoaded] = useFonts(customFont);
     const raceData = {
         raceName: 'Anchor Down Ultra',
@@ -54,7 +54,6 @@ export default function ActiveRaceStats({navigation}) {
                     })}
                     </View>
                 </View>
-
             </View>
         )   
     } else {
@@ -97,5 +96,4 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         backgroundColor:"#0DF7DB",
     }
-    
 })
