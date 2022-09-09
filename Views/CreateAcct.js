@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flex: 1,
         paddingTop: 400,
-        paddingBottom: 400
+        paddingBottom: 350
     },
     scrollview: {
         backgroundColor: '#F8CD82',
