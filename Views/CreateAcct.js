@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Pressable,} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Pressable, ScrollView, SafeAreaView} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
 import PhoneInput from 'react-native-phone-input';
@@ -60,7 +60,8 @@ export default function CreateAcct({navigation}) {
 
     if (fontsLoaded) {
         return (
-            <View style={styles.container}
+            <SafeAreaView style={styles.container}>
+            <ScrollView contentContainerStyle={styles.container}
             >
                 <Text style={styles.titleText}>Create an Account</Text>
                 <Input style={styles.inputView}
@@ -135,7 +136,8 @@ export default function CreateAcct({navigation}) {
                 >
                     <Text style={styles.text}>Create Account</Text>
                 </Pressable>
-          </View>
+          </ScrollView>
+          </SafeAreaView>
         )
     } else {
         return <View /> 
@@ -148,6 +150,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
+        paddingTop: 400,
+        paddingBottom: 400
+    },
+    scrollview: {
+        backgroundColor: '#F8CD82',
     },
     error: {
         color: 'rgb(255,0,0)',
