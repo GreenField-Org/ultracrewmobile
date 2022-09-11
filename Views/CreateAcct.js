@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Pressable, ScrollView, SafeAreaView} from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
