@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Pressable, Text, View } from 'react-native';
 import { useFonts } from "expo-font";
 import { Col, Row, Grid } from "react-native-easy-grid";
 
@@ -14,14 +14,16 @@ const completedRace = {
     averagePace: "12:34/mile",
     distanceRan: 250,
     calConsume: 1234,
-    calBurned: 5678
+    calBurned: 5678,
+    aidStations: ["half-marathon", "marathon", "50k"]
 }
 
-export default function CompletedRaceStats() {
+export default function CompletedRaceStats({navigation}) {
     let [fontsLoaded] = useFonts(customFont);
 
     if (fontsLoaded) {
         return (
+            <>
             <View style={styles.container}>
                 <Text style={styles.titleText}>{completedRace.name}</Text>
                 <Grid>
@@ -41,8 +43,13 @@ export default function CompletedRaceStats() {
                         <Row style={styles.row}><Text style={styles.colText}>{completedRace.calConsume} calories</Text></Row>
                         <Row style={styles.row}><Text style={styles.colText}>{completedRace.calBurned} calories</Text></Row>
                     </Col>
-</Grid>
+                </Grid>
             </View>
+            <View style={styles.container}>
+                <Text style={styles.subText}>Aid Stations</Text>
+                    {completedRace.aidStations.map(aid =><Pressable onPress={() => navigation.navigate('AidStationStats')}><Text>{aid}</Text></Pressable>)}
+            </View>
+            </>
         )   
     } else {
         return <View/>
@@ -53,6 +60,11 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 30,
         marginBottom: 50,
+        fontFamily: 'Lobster-Regular',
+    },
+    subText: {
+        fontSize: 30,
+        marginBottom: 10,
         fontFamily: 'Lobster-Regular',
     },
     container: {
@@ -66,6 +78,7 @@ const styles = StyleSheet.create({
     },
     row: {
         borderBottomWidth: 1,
-        borderBottomColor: 'black'
+        borderBottomColor: 'black',
+        height: 50
     }
 })
