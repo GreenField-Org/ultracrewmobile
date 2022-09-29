@@ -1,10 +1,8 @@
 import React from 'react';
-import { View, Button } from 'react-native'
 import LoginScreen from './Views/LoginScreen';
 import MyRaces from './Views/MyRaces'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ScreenStack } from 'react-native-screens';
 import Home from './Views/Home'
 import CreateAcct from './Views/CreateAcct';
 import ActiveRaces from './Views/ActiveRaces';

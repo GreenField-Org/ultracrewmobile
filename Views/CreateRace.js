@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import Input from '../Components/FormComponents/Input';
 import { useFonts } from "expo-font";
+import user from '../assets/data';
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -125,6 +126,16 @@ export default function CreateRace({navigation}) {
             <Pressable
                 disabled={isDisabled} 
                 style={styles.submitButton} onPress={() => {
+                    user.races = [...user.races, {
+                        "id": Math.random(),
+                        "raceName": name,
+                        "date": date,
+                        "distance/goal": distance,
+                        "timeAlotted": time,
+                        "location": location,
+                        "aidStations": []
+                    }];
+
                     setName('');
                     setDate('');
                     setDistance('');
