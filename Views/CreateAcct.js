@@ -12,8 +12,16 @@ const customFont = {
 
 export default function CreateAcct({navigation}) {
   const [fontsLoaded] = useFonts(customFont);
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [middleInitial, setMiddleInitial] = useState('');
   const [date, setDate] = useState(new Date());
+  const [weight, setWeight] = useState('');
   const [email, setEmail] = useState("");
+  const [address, setAddress] = useState('');
+  const [userTier, setUserTier] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emailError, setEmailError] = useState(null);
   const [countries, setCountries] = useState([])
@@ -46,14 +54,43 @@ export default function CreateAcct({navigation}) {
     showMode('date');
   };
 
-  const handleSumbit = () => {
+  const handleSumbit = async () => {
 
+    // prelim validatation of email 
     if(!/\S+@\S+\.\S+/.test(email)) {
         setEmailError('Invalid Email');
         return;
     } else { 
         setEmailError(null);
     }
+
+    await fetch('http://192.168.1.77:5000/api/user/', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            userName: userName,
+            firstName: firstName,
+            lastName: lastName,
+            middleInitial: middleInitial,
+            password: password,
+            dob: date,
+            weight: weight,
+            country: country,
+            address: address,
+            email: email,
+            phoneNum: phoneNumber,
+            userTier: userTier
+        })
+      })
+      .then(result => console.log(result))
+      .catch(function (error) {
+        console.log("Error");
+        // ADD THIS THROW error
+        throw error;
+      });
 
     navigation.navigate("Home");
   }
@@ -66,15 +103,23 @@ export default function CreateAcct({navigation}) {
                 <Text style={styles.titleText}>Create an Account</Text>
                 <Input style={styles.inputView}
                     placeholder='Username'
+                    onChangeText={setUserName}
+                />
+                <Input style={styles.inputView}
+                    placeholder='Password'
+                    onChangeText={setPassword}
                 />
                 <Input
                     placeholder='First Name'
+                    onChangeText={setFirstName}
                 />
                 <Input 
                     placeholder='Middle initial'
+                    onChangeText={setMiddleInitial}
                 />
                 <Input 
                     placeholder='Last Name'
+                    onChangeText={setLastName}
                 />
                 <Text>Date of Birth:  </Text>
                 <DateTimePicker
@@ -89,6 +134,7 @@ export default function CreateAcct({navigation}) {
                 <Input 
                     placeholder='Weight'
                     type = 'numeric'
+                    onChangeText={setWeight}
                 />
                 <SelectDropdown 
                     buttonStyle={styles.ButtonInput}
@@ -106,20 +152,21 @@ export default function CreateAcct({navigation}) {
                 />
                 <Input 
                     placeholder='Street address'
+                    onChangeText={setAddress}
                 />
                 <Input 
                     type='email-address'
                     placeholder='Email'
                     autoCapitalize="none"
                     autoComplete={false}
-                    onChange={text => setEmail(text)}
+                    onChange={setEmail}
                     value={email}
                 />
                 {emailError && <Text style={styles.error}>{emailError}</Text>}
                 <PhoneInput
                     style={styles.phoneInputView}
                     initialValue={phoneNumber}
-                    onChangeText={text => setPhoneNumber(text)}
+                    onChangeText={setPhoneNumber}
                     initialCountry="us"
                     textProps={{
                         placeholder: 'Phone Number'
@@ -127,6 +174,7 @@ export default function CreateAcct({navigation}) {
                 />
                 <Input 
                     placeholder='User Tier'
+                    onChangeText={setUserTier}
                 />
 
                 <Pressable
