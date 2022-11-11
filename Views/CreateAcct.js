@@ -87,7 +87,7 @@ export default function CreateAcct({navigation}) {
       })
       .then(result => console.log(result))
       .catch(function (error) {
-        console.log("Error");
+        console.error("Error");
         // ADD THIS THROW error
         throw error;
       });
