@@ -46,10 +46,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 20,
-        width: 110,
-        height: 110,
+        width: "80%",
+        height: 40,
         paddingHorizontal: 15,
-        borderRadius: 60,
+        borderRadius: 10,
         elevation: 3,
         marginTop: 15,
         backgroundColor: '#0DF7DB',
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     textCompletedRaces: {
-        fontSize: 14,
+        fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center'
     },
