@@ -81,6 +81,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         alignItems: "center",
     },
+    text: {
+      fontSize: 20,
+      fontWeight: 600,
+    },
     TextInput: {
         height: 50,
         flex: 1,
@@ -98,7 +102,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 35,
         height: 50,
-        fontSize: 30,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#0DF7DB",
