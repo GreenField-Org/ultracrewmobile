@@ -9,13 +9,13 @@ import { Pressable } from 'react-native';
 export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
-            <Pressable
-              title="My Races"
-              color= 'black'
-              style={styles.button}
-              onPress={() => navigation.navigate('MyRaces')}>
-              <Text style={styles.text}>View My Races</Text>
-            </Pressable>
+          <Pressable
+            title="My Races"
+            color= 'black'
+            style={styles.button}
+            onPress={() => navigation.navigate('MyRaces')}>
+            <Text style={styles.text}>View My Races</Text>
+          </Pressable>
           
           <Pressable
           title="My Profile"

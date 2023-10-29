@@ -16,16 +16,14 @@ export default function LoginScreen({ navigation }) {
         return (
           <View style={styles.container}>
             <Text style={styles.titleText}>Ultra Crew App</Text>
-            <View style={styles.inputView}>
+            <View style={styles.loginBox}>
               <TextInput
                 style={styles.TextInput}
                 placeholder="email"
                 placeholderTextColor="#003f5c"
                 onChangeText={(email) => setUsername(username)}
+                keyboardType="email-address"
               />
-            </View>
-
-            <View style={styles.inputView}>
               <TextInput
                 style={styles.TextInput}
                 placeholder="password"
@@ -34,7 +32,6 @@ export default function LoginScreen({ navigation }) {
                 secureTextEntry={true}
                 onChangeText={(password) => setPassword(password)}
               />
-            </View>
 
             <Pressable
               title="Login"
@@ -51,6 +48,7 @@ export default function LoginScreen({ navigation }) {
             >
               <Text style={styles.createAcctBtn}>Create an Account</Text>
             </Pressable>
+            </View>
           </View>
         )
     } else {
@@ -73,34 +71,41 @@ const styles = StyleSheet.create({
         marginBottom: 50,
         fontFamily: "Lobster-Regular",
     },
-    inputView: {
-        backgroundColor: "#EBEBEB",
-        borderRadius: 10,
-        width: "80%",
-        height: 45,
-        marginBottom: 20,
-        alignItems: "center",
+    loginBox: {
+      alignItems: "center",
+      backgroundColor: "#FFFFFF",
+      borderTopLeftRadius: 30,
+      borderTopRightRadius: 30,
+      width: "100%",
+      paddingVertical: 100,
+      paddingHorizontal: 10,
+      marginTop: 50,
+      bottom: -50,
     },
     text: {
       fontSize: 20,
       fontWeight: 600,
     },
     TextInput: {
-        height: 50,
+      backgroundColor: "#EBEBEB",
+        height: 60,
+        width: "100%",
+        borderRadius: 50,
         flex: 1,
         fontSize: 20,
-        paddingTop: 5,
-        paddingBottom: 5,
-        marginLeft: 20,
+        marginVertical: 10,
+        padding: 10,
         textAlign: "center",
     },
     createAcct: {
         marginTop: 60,
+        marginBottom: 60,
     },
     loginButton: {
-        width: "80%",
-        borderRadius: 10,
+        width: "100%",
+        borderRadius: 50,
         marginBottom: 35,
+        marginTop: 10,
         height: 50,
         alignItems: "center",
         justifyContent: "center",
