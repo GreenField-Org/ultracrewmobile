@@ -13,6 +13,7 @@
     "@expo/webpack-config": "^19.0.0",
     "@react-native-community/datetimepicker": "7.2.0",
     "@react-native-picker/picker": "2.4.10",
+    "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "expo": "^49.0.0",
