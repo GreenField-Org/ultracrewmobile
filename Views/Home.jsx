@@ -2,13 +2,10 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Pressable } from 'react-native';
 
-
-/*  This should be moved into the View folder once all page creations are merged back into main */
-/* will need to add navigation to each button here */ 
-
 export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
+          <Text style={styles.text}>Hello, !</Text>
           <Pressable
             title="My Races"
             color= 'black'
