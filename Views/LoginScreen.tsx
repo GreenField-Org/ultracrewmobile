@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
                 placeholder="email"
                 placeholderTextColor="#003f5c"
                 onChangeText={(email) => setUsername(username)}
-                inputMode="email-address"
+                inputMode="email"
               />
               <TextInput
                 style={styles.TextInput}
@@ -34,7 +34,6 @@ export default function LoginScreen({ navigation }) {
               />
 
             <Pressable
-              title="Login"
               style={styles.loginButton}
               onPress={() => navigation.navigate("Home")}
             >
@@ -42,8 +41,6 @@ export default function LoginScreen({ navigation }) {
             </Pressable>
 
             <Pressable
-              title="Create an Account"
-              style={styles.createAcctBtn}
               onPress={() => navigation.navigate("CreateAcct")}
             >
               <Text style={styles.createAcctBtn}>Create an Account</Text>
@@ -84,7 +81,7 @@ const styles = StyleSheet.create({
     },
     text: {
       fontSize: 20,
-      fontWeight: 600,
+      fontWeight: "600",
     },
     TextInput: {
       backgroundColor: "#EBEBEB",
@@ -110,6 +107,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#0DF7DB",
-        fontWeight: 700,
+        fontWeight: "700",
     },
 });
