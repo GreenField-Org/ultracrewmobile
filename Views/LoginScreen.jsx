@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
                 placeholder="email"
                 placeholderTextColor="#003f5c"
                 onChangeText={(email) => setUsername(username)}
-                keyboardType="email-address"
+                inputMode="email-address"
               />
               <TextInput
                 style={styles.TextInput}
