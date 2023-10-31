@@ -7,43 +7,33 @@ export default function Home({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.text}>Hello, !</Text>
           <Pressable
-            title="My Races"
-            color= 'black'
             style={styles.button}
             onPress={() => navigation.navigate('MyRaces')}>
             <Text style={styles.text}>View My Races</Text>
           </Pressable>
-          
           <Pressable
-          title="My Profile"
           style={styles.button}
           onPress={() => navigation.navigate('ProfilePage')}>
             <Text style={styles.text}>My Profile</Text>
           </Pressable>
-    {/*will need to add functional nagivation*/}
-        <Pressable
-        title="Create a Race"
-        style={styles.button}
-        onPress={() => navigation.navigate('CreateRace')}>
-          <Text style={styles.text}>Create a Race</Text>
-        </Pressable>
+          {/*will need to add functional nagivation*/}
+          <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate('CreateRace')}>
+            <Text style={styles.text}>Create a Race</Text>
+          </Pressable>
 
-        {/*will need to add functional nagivation*/}
-      <Pressable
-      title="Settings"
-      style={styles.button}
-      backgroundColor= 'blue'
-      onPress={() => navigation.navigate()}>
-        <Text style={styles.text}>Settings</Text>
-      </Pressable>
-
-      <Pressable
-      title="Logout"
-      style={styles.button}
-      backgroundColor= 'blue'>
-        <Text style={styles.text}>Logout</Text>
-      </Pressable>
-    
+          {/*will need to add functional nagivation*/}
+          <Pressable
+            style={styles.button}
+            onPress={() => navigation.navigate()}>
+              <Text style={styles.text}>Settings</Text>
+          </Pressable>
+          <Pressable
+            style={styles.button}
+          >
+            <Text style={styles.text}>Logout</Text>
+          </Pressable>
         </View>
     )
 }
