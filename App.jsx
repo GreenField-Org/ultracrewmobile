@@ -33,7 +33,7 @@ export default function App({navigation}) {
           headerStyle: {
             backgroundColor: "lightgray",
           },
-          headerTintColor: '#000',
+          tintColor: '#000',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
@@ -43,8 +43,8 @@ export default function App({navigation}) {
           <Tab.Screen name="Races" component={ActiveRaces} options={{headerShown: false}} />
           <Tab.Screen name="Profile" component={ProfilePage} options={{headerShown: false}} /> */}
           <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
-          <Stack.Screen name="MyRaces" component={MyRaces} options={{ title: 'My Races', headerShown: false}} />
-          <Stack.Screen name="Home" component={Home} options={{ title: 'Home', headerShown: false}} />
+          <Stack.Screen name="MyRaces" component={MyRaces} options={{ title: 'My Races'}} />
+          <Stack.Screen name="Home" component={Home} options={{ title: 'Home'}} />
           <Stack.Screen name="CreateAcct" component={CreateAcct} options={{ title: 'Create Account'}} />
           <Stack.Screen name="CreateAid" component={CreateAid} options={{ title: 'Create Aid Station'}} />
           <Stack.Screen name="ActiveRaces" component={ActiveRaces} options={{ title: 'Active Races'}} />
