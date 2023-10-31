@@ -1,0 +1,15 @@
+{ 
+    "_id": "63235a3441b19902d99fe878",
+    "username": "jToaste",
+    "firstName": "Jeff",
+    "lastName": "Santo",
+    "middleInitial": "T",
+    "dob": "1990-06-25T04:00:00.000+00:00",
+    "weight": 170,
+    "country": "United States of America",
+    "address": "14 Briggs Court",
+    "email": "jtoaste@gmail.com",
+    "phoneNum": "774-274-0089",
+    "userTier": 1,
+    "password": "ToasteTest"
+}

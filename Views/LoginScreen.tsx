@@ -57,7 +57,7 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     createAcctBtn: {
-        fontSize: 16,
+        fontSize: 14,
         color: "#FF9001",
     },
     container: {
