@@ -55,10 +55,11 @@ export default function LoginScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     createAcctBtn: {
-        fontSize: 20,
+        fontSize: 16,
+        color: "#F8CD82"
     },
     container: {
-        backgroundColor: "#F8CD82",
+        backgroundColor: "#1c1c1c",
         alignItems: "center",
         justifyContent: "center",
         flex: 1,
@@ -67,10 +68,13 @@ const styles = StyleSheet.create({
         fontSize: 50,
         marginBottom: 50,
         fontFamily: "Lobster-Regular",
+        color: "#F8CD82"
     },
     loginBox: {
       alignItems: "center",
-      backgroundColor: "#FFFFFF",
+      borderColor: "#ebebeb",
+      borderWidth: 1,
+      shadowColor: "#F8CD82",
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
       width: "100%",
@@ -96,7 +100,7 @@ const styles = StyleSheet.create({
     },
     createAcct: {
         marginTop: 60,
-        marginBottom: 60,
+        marginBottom: 60
     },
     loginButton: {
         width: "100%",
