@@ -15,21 +15,18 @@ export default function MyRaces({navigation}) {
                 <Text style={styles.titleText}>My Races</Text>
                 <Pressable
                     style={styles.button}
-                    title='Create A New Race'
                     onPress={() => navigation.navigate('CreateRace')}
                 >
                     <Text style={styles.text}>Create a New Race</Text>
                 </Pressable>
                 <Pressable 
                     style={styles.button}
-                    title='Active Races'
                     onPress={() => navigation.navigate('ActiveRaces')}
                 >
                     <Text style={styles.text}>Active Races</Text>
                 </Pressable>
                 <Pressable 
                     style={styles.button}
-                    title='Completed Races'
                     onPress={() => navigation.navigate('CompletedRaces')}
                 >
                     <Text style={styles.textCompletedRaces}>Completed Races</Text>
