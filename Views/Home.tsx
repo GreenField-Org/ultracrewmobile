@@ -21,13 +21,15 @@ export default function Home({ navigation }) {
             <ScrollView horizontal style={styles.scrollContainer}>
                 <>
                 {user.races.map(race => {
-                    <Text>{race.raceName}</Text>
+                    <Pressable>
+                        <Text>{race.raceName}</Text>
+                    </Pressable>
                 })}
                 </>
             </ScrollView>
             <View style={styles.rowCompletedContainer}>
                 <Text style={styles.sectionHeader}>Completed races</Text>
-                <Pressable onPress={() => navigation.navigate("MyRaces")}>
+                <Pressable onPress={() => navigation.navigate("CompletedRaces")}>
                     <Text style={styles.smallText}>View all</Text>
                 </Pressable>
             </View>

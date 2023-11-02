@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Pressable } from "react-native";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 import { useFonts } from "expo-font";
 
 const customFont = {
@@ -11,11 +11,13 @@ export default function LoginScreen({ navigation }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [fontsLoaded] = useFonts(customFont);
+    const logo = require("../assets/icons8-track-and-field-100.png");
 
     if (fontsLoaded) {
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>Ultra Crew App</Text>
+                <Image source={logo} />
                 <View style={styles.loginBox}>
                     <TextInput
                         style={styles.TextInput}
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 50,
-        marginBottom: 50,
+        marginBottom: 0,
         paddingTop: 10,
         fontFamily: "Lobster-Regular",
         color: "#FF9001",
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
         width: "100%",
         paddingVertical: 100,
         paddingHorizontal: 10,
-        marginTop: 50,
+        marginTop: 0,
         bottom: -30,
     },
     text: {
