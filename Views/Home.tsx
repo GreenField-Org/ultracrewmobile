@@ -8,40 +8,31 @@ export default function Home({ navigation }) {
     const profileImage = require("../assets/icons8-runner-32.png");
     return (
         <View style={styles.container}>
+            <Pressable onPress={() => navigation.navigate("ProfilePage")}>
             <Image source={profileImage} style={styles.profileImage} />
+            </Pressable>
             <Text style={styles.text}>Hello, {user.firstName}!</Text>
             <View style={styles.rowContainer}>
-                <Text style={styles.sectionHeader}>My races</Text>
+                <Text style={styles.sectionHeader}>Active races</Text>
+                <Pressable onPress={() => navigation.navigate("MyRaces")}>
+                    <Text style={styles.smallText}>View all</Text>
+                </Pressable>
+            </View>
+            <View style={styles.scrollContainer}></View>
+            <View style={styles.rowContainer}>
+                <Text style={styles.sectionHeader}>Completed races</Text>
                 <Pressable onPress={() => navigation.navigate("MyRaces")}>
                     <Text style={styles.smallText}>View all</Text>
                 </Pressable>
             </View>
             <View style={styles.scrollContainer}></View>
             <View style={styles.rowButtonContainer}>
-                <Pressable
-                    style={styles.button}
-                    onPress={() => navigation.navigate("ProfilePage")}
-                >
-                    <Text style={styles.buttonText}>My Profile</Text>
-                </Pressable>
                 {/*will need to add functional nagivation*/}
                 <Pressable
                     style={styles.button}
                     onPress={() => navigation.navigate("CreateRace")}
                 >
                     <Text style={styles.buttonText}>Create a Race</Text>
-                </Pressable>
-            </View>
-            <View style={styles.rowButtonContainer}>
-                {/*will need to add functional nagivation*/}
-                <Pressable
-                    style={styles.button}
-                    onPress={() => navigation.navigate()}
-                >
-                    <Text style={styles.buttonText}>Settings</Text>
-                </Pressable>
-                <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>Logout</Text>
                 </Pressable>
             </View>
         </View>
@@ -66,7 +57,7 @@ const styles = StyleSheet.create({
     rowContainer: {
         flexDirection: "row",
         justifyContent: "space-evenly",
-        gap: 200,
+        gap: 150,
         paddingVertical: 10,
     },
     rowButtonContainer: {
