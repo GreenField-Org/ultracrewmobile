@@ -18,13 +18,24 @@ import CompletedRaceStats from './Views/CompletedRaceStats';
 import { RootSiblingParent } from 'react-native-root-siblings';
 import ActiveRaceStats from './Views/ActiveRaceStats';
 import AidStationStats from './Views/AidStationStats';
+import { UserContext } from './context/user-context';
 
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
 
+const defaultUser = {
+  firstName: 'Samantha',
+  LastName: 'Claus',
+  MiddleInitial: 'C',
+  phone: '5555555555',
+  email: 'SClaus@yopmail.com',
+  password: 'password123!'
+}
+
 export default function App({navigation}) {
   return(
+    <UserContext.Provider value={defaultUser}>
     <RootSiblingParent>
       <NavigationContainer>
       <Stack.Navigator 
@@ -58,5 +69,6 @@ export default function App({navigation}) {
         </Stack.Navigator>
       </NavigationContainer>
     </RootSiblingParent>
+    </UserContext.Provider>
   )
 };
