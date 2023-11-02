@@ -6,7 +6,8 @@ const defaultUser = {
     MiddleInitial: 'C',
     phone: '5555555555',
     email: 'SClaus@yopmail.com',
-    password: 'password123!'
+    password: 'password123!',
+    races: [],
 }
 
 export const UserContext = createContext(defaultUser);

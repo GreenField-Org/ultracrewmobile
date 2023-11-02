@@ -1,8 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { useFonts } from "expo-font";
-import EditPencil from '../Components/Images/EditPencil.png'
-import { TouchableOpacity } from 'react-native-web';
+import EditPencil from '../assets/EditPencil.png'
 
 const customFont = {
   "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),

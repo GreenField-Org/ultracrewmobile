@@ -1,11 +1,9 @@
 import React from 'react';
-import { View, Button } from 'react-native'
 import LoginScreen from './Views/LoginScreen';
 import MyRaces from './Views/MyRaces'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ScreenStack } from 'react-native-screens';
 import Home from './Views/Home'
 import CreateAcct from './Views/CreateAcct';
 import ActiveRaces from './Views/ActiveRaces';
@@ -24,13 +22,18 @@ const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
 
+const raceData = "./assets/data/mocj-race-data.json";
+
 const defaultUser = {
   firstName: 'Samantha',
   LastName: 'Claus',
   MiddleInitial: 'C',
   phone: '5555555555',
   email: 'SClaus@yopmail.com',
-  password: 'password123!'
+  password: 'password123!',
+  races: [
+    ...raceData
+  ]
 }
 
 export default function App({navigation}) {
@@ -44,7 +47,6 @@ export default function App({navigation}) {
           headerStyle: {
             backgroundColor: "lightgray",
           },
-          tintColor: '#000',
           headerTitleStyle: {
             fontWeight: 'bold',
           },

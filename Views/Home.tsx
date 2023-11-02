@@ -12,29 +12,40 @@ export default function Home({ navigation }) {
             <Image source={profileImage} style={styles.profileImage} />
             </Pressable>
             <Text style={styles.text}>Hello, {user.firstName}!</Text>
-            <View style={styles.rowContainer}>
+            <View style={styles.rowActiveContainer}>
                 <Text style={styles.sectionHeader}>Active races</Text>
                 <Pressable onPress={() => navigation.navigate("MyRaces")}>
                     <Text style={styles.smallText}>View all</Text>
                 </Pressable>
             </View>
-            <View style={styles.scrollContainer}></View>
-            <View style={styles.rowContainer}>
+            <ScrollView horizontal style={styles.scrollContainer}>
+                <>
+                {user.races.map(race => {
+                    <Text>{race.raceName}</Text>
+                })}
+                </>
+            </ScrollView>
+            <View style={styles.rowCompletedContainer}>
                 <Text style={styles.sectionHeader}>Completed races</Text>
                 <Pressable onPress={() => navigation.navigate("MyRaces")}>
                     <Text style={styles.smallText}>View all</Text>
                 </Pressable>
             </View>
-            <View style={styles.scrollContainer}></View>
-            <View style={styles.rowButtonContainer}>
-                {/*will need to add functional nagivation*/}
+            <ScrollView horizontal style={styles.scrollContainer}>
+                <>
+                {user.races.map(race => {
+                    <Text>{race.raceName}</Text>
+                })}
+                </>
+            </ScrollView>
+            {/*<View style={styles.rowButtonContainer}>
                 <Pressable
                     style={styles.button}
                     onPress={() => navigation.navigate("CreateRace")}
                 >
                     <Text style={styles.buttonText}>Create a Race</Text>
                 </Pressable>
-            </View>
+            </View>*/}
         </View>
     );
 }
@@ -54,16 +65,22 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: "center",
     },
-    rowContainer: {
+    rowActiveContainer: {
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        gap: 150,
+        gap: 225,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+    },
+    rowCompletedContainer: {
+        flexDirection: "row",
+        gap: 190,
+        paddingHorizontal: 10,
         paddingVertical: 10,
     },
     rowButtonContainer: {
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        gap: 10,
+        justifyContent: "center",
+        alignItems: "center",
     },
     profileImage: {
         height: 60,
@@ -96,6 +113,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
     },
     scrollContainer: {
-        height: 200,
+        width: "90%",
+        backgroundColor: "#C4C4C4",
     },
 });
