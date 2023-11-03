@@ -8,7 +8,7 @@ import Home from './Views/Home'
 import CreateAcct from './Views/CreateAcct';
 import ActiveRaces from './Views/ActiveRaces';
 import ProfilePage from './Views/ProfilePage';
-import AidStation from './Views/Aid-Station';
+import AidStation from './Views/AidStation';
 import CompletedRaces from './Views/CompletedRaces'; 
 import CreateRace from './Views/CreateRace';
 import CreateAid from './Views/CreateAid';
