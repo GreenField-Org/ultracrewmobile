@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheets, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 
 export default function AidStation ({ stationName }) {
     return (
