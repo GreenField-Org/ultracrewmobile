@@ -39,7 +39,7 @@ export default function ActiveRaceStats({ navigation }) {
                             return(
                                 <Pressable 
                                     onPress={() => navigation.navigate('AidStation')}
-                                    key={station.id}>
+                                    key={station.stationNum}>
                                     <Text>{station.stationNum}</Text>
                                 </Pressable>
                             )
@@ -49,7 +49,7 @@ export default function ActiveRaceStats({ navigation }) {
                     <Text style={styles.headerText}>Time Spent</Text>
                     {raceData.aidStation.map((station) => {
                         return(
-                            <Text key={station.id}>{station.timeSpent}</Text>
+                            <Text key={station.stationNum}>{station.timeSpent}</Text>
                         )
                     })}
                     </View>
