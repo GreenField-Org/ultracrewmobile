@@ -1,9 +1,10 @@
 import React from 'react';
+import { KeyboardTypeOptions } from 'react-native';
 import { StyleSheet, View, TextInput } from 'react-native';
 
 export interface InputProps {
     placeholder: string;
-    type?: string;
+    type?: KeyboardTypeOptions;
     value?: string;
     onChange?: () => void;
 }
@@ -15,7 +16,7 @@ export default function Input({ placeholder, type = 'default', value, onChange }
                 style={styles.textInput}
                 value={value}
                 placeholder={placeholder}
-                //keyboardType={type}
+                keyboardType={type}
                 placeholderTextColor="#003f5c"
                 onChangeText={onChange}
             />
