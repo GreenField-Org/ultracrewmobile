@@ -15,7 +15,7 @@ const completedRace = {
     distanceRan: 250,
     calConsume: 1234,
     calBurned: 5678,
-    aidStations: ["half-marathon", "marathon", "50k"],
+    aidStations: [{name: "half-marathon"}, {name: "marathon"}, {name: "50k"}],
 };
 
 export default function CompletedRaceStats({ navigation }) {
@@ -93,7 +93,7 @@ export default function CompletedRaceStats({ navigation }) {
                                 navigation.navigate("AidStationStats")
                             }
                         >
-                            <Text key={aid.name}>{aid}</Text>
+                            <Text key={aid.name}>{aid.name}</Text>
                         </Pressable>
                     ))}
                 </View>
