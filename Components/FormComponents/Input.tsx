@@ -27,10 +27,11 @@ export default function Input({ placeholder, type = 'default', value, onChange }
 const styles = StyleSheet.create({
     inputView: {
         backgroundColor: "lightgray",
-        borderRadius: 5,
-        width: "85%",
+        borderRadius: 50,
+        width: "95%",
         height: 45,
-        margin: 5,
+        marginBottom: 10,
+        marginTop: 5,
         alignItems: "center",
     },
     textInput: {

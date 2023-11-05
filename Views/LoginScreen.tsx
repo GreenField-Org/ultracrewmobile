@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [fontsLoaded] = useFonts(customFont);
-    const logo = require("../assets/icons8-track-and-field-100.png");
+    const logo = require("../assets/runLogo.png");
 
     if (fontsLoaded) {
         return (

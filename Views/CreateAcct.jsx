@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
     StyleSheet,
     Text,
@@ -12,6 +12,7 @@ import { useFonts } from "expo-font";
 import PhoneInput from "react-native-phone-input";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import SelectDropdown from "react-native-select-dropdown";
+import { UserContext } from "../context/user-context";
 
 const customFont = {
     "Lobster-Regular": require("../assets/fonts/Lobster-Regular.ttf"),
@@ -33,6 +34,7 @@ export default function CreateAcct({ navigation }) {
     const [emailError, setEmailError] = useState(null);
     const [countries, setCountries] = useState([]);
     const [country, setCountry] = useState("");
+    const user = useContext(UserContext);
 
     //fetch countries returns an array of objects use {name:{common}} to list
     useEffect(() => {
