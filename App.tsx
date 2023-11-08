@@ -17,6 +17,8 @@ import { RootSiblingParent } from 'react-native-root-siblings';
 import ActiveRaceStats from './Views/ActiveRaceStats';
 import AidStationStats from './Views/AidStationStats';
 import { UserContext } from './context/user-context';
+import Settings from './Views/Settings';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +38,39 @@ const defaultUser = {
   ]
 }
 
+function HomeTabs() {
+  return (
+    <Tab.Navigator screenOptions={({ route }) => ({
+      headerShown: false,
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+
+        if (route.name === 'Home') {
+          iconName = focused
+            ? 'home'
+            : 'home-outline';
+        } else if (route.name === "Races") {
+          iconName = focused ? 'barbell' : 'barbell-outline'
+        } else if (route.name === "Profile") {
+          iconName = focused ? 'person-circle' : 'person-circle-outline'
+        } else if (route.name === 'Settings') {
+          iconName = focused ? 'ios-list' : 'ios-list-outline';
+        }
+
+        // You can return any component that you like here!
+        return <Ionicons name={iconName} size={size} color={color} />;
+      },
+      tabBarActiveTintColor: 'tomato',
+      tabBarInactiveTintColor: 'gray',
+})}>
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Races" component={ActiveRaces} />
+          <Tab.Screen name="Profile" component={ProfilePage} /> 
+          <Tab.Screen name="Settings" component={Settings} />
+    </Tab.Navigator>
+  )
+}
+
 export default function App({navigation}) {
   return(
     <UserContext.Provider value={defaultUser}>
@@ -51,13 +86,9 @@ export default function App({navigation}) {
             fontWeight: 'bold',
           },
         }}>
-          {/*<Tab.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
-          <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
-          <Tab.Screen name="Races" component={ActiveRaces} options={{headerShown: false}} />
-          <Tab.Screen name="Profile" component={ProfilePage} options={{headerShown: false}} /> */}
           <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
           <Stack.Screen name="MyRaces" component={MyRaces} options={{ title: 'My Races'}} />
-          <Stack.Screen name="Home" component={Home} options={{ title: 'Home'}} />
+          <Stack.Screen name="Home" component={HomeTabs} options={{ title: 'Home'}} />
           <Stack.Screen name="CreateAcct" component={CreateAcct} options={{ title: 'Create Account'}} />
           <Stack.Screen name="CreateAid" component={CreateAid} options={{ title: 'Create Aid Station'}} />
           <Stack.Screen name="ActiveRaces" component={ActiveRaces} options={{ title: 'Active Races'}} />
